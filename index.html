@@ -1,1 +1,310 @@
+<!-- ===== PREMIUM HERO ===== -->
 
+<header class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-line"></div>
+
+    <div class="hero-small">
+      WEDDINGS • EVENTS • CELEBRATIONS
+    </div>
+
+    <h1>
+      GRAND MARQUEE<br>
+      <span>DEFENCE</span>
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <h2>
+      Make Your Event Memorable
+    </h2>
+
+    <p>
+      An elegant destination for weddings, receptions,
+      birthdays, university celebrations and corporate events.
+    </p>
+
+    <a href="#contact" class="hero-button">
+      CONTACT US
+    </a>
+
+  </div>
+
+</header>
+
+
+<style>
+
+/* ===== HERO ===== */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("images/marquee-main.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Dark luxury overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.42),
+      rgba(0,0,0,0.86)
+    );
+
+  z-index: 1;
+}
+
+
+/* Content */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 92%;
+  max-width: 1000px;
+
+  padding: 30px 15px;
+}
+
+
+/* Small heading */
+
+.hero-small {
+  color: #d4af37;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 22px;
+}
+
+
+/* Gold lines */
+
+.hero-line {
+  width: 75px;
+  height: 1px;
+
+  margin: 0 auto 24px;
+
+  background: #d4af37;
+
+  box-shadow:
+    0 0 12px rgba(212,175,55,0.6);
+}
+
+
+/* Main title */
+
+.hero h1 {
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(43px, 8vw, 92px);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+
+  letter-spacing: 7px;
+
+  text-transform: uppercase;
+
+  color: #f0d77a;
+
+  text-shadow:
+    0 3px 8px rgba(0,0,0,0.95),
+    0 0 30px rgba(212,175,55,0.25);
+}
+
+
+/* Defence */
+
+.hero h1 span {
+
+  color: #ffffff;
+
+  font-size: 0.78em;
+
+  letter-spacing: 12px;
+}
+
+
+/* Second gold line */
+
+.hero h1 + .hero-line {
+
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+
+/* Tagline */
+
+.hero h2 {
+
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(24px, 4vw, 42px);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  letter-spacing: 2px;
+}
+
+
+/* Description */
+
+.hero p {
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: #eeeeee;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* Button */
+
+.hero-button {
+
+  display: inline-block;
+
+  margin-top: 34px;
+
+  padding: 15px 38px;
+
+  color: #111;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b88a19,
+      #d4af37,
+      #f1d878
+    );
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.5);
+
+  transition: 0.3s ease;
+}
+
+
+.hero-button:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 35px rgba(212,175,55,0.35);
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+  .hero {
+
+    min-height: 92vh;
+
+    background-position: center;
+  }
+
+  .hero-small {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+
+    font-size: 43px;
+
+    letter-spacing: 4px;
+  }
+
+  .hero h1 span {
+
+    letter-spacing: 7px;
+  }
+
+  .hero h2 {
+
+    font-size: 25px;
+  }
+
+  .hero p {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+}
+
+</style>

@@ -4,23 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Grand Marquee Defence</title>
+<title>Grand Marquee Defence | Premium Event Venue</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --black:#030303;
-    --black2:#080705;
-    --gold:#c9a45c;
-    --gold-light:#e1c27b;
-    --gold-dark:#80632f;
-    --cream:#d8cfbd;
-    --muted:#938b7b;
+    --bg:#08090a;
+    --bg-soft:#101112;
+    --card:#121415;
+    --gold:#c6a15b;
+    --gold-light:#e1c37e;
+    --text:#f0ece4;
+    --muted:#9b9993;
+    --border:rgba(198,161,91,.22);
 }
 
 *{
@@ -34,190 +35,123 @@ html{
 }
 
 body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:'Montserrat',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
     overflow-x:hidden;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
-h1,h2,h3{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:500;
+img{
+    max-width:100%;
+    display:block;
 }
 
 
 /* =====================================================
-   LUXURY LOADING SCREEN
+   LOADING SCREEN
 ===================================================== */
 
 .loader{
     position:fixed;
     inset:0;
     z-index:9999;
-
-    background:#020202;
-
+    background:#070707;
     display:flex;
-    justify-content:center;
     align-items:center;
-
-    animation:loaderFade 1s ease 2.3s forwards;
+    justify-content:center;
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
-.loader-box{
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-inner{
     text-align:center;
 }
 
-.loader-brand{
-    font-family:'Cormorant Garamond',serif;
-
+.loader-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:42px;
+    letter-spacing:7px;
     color:var(--gold-light);
-
-    font-size:44px;
-
-    letter-spacing:9px;
-
-    margin-bottom:20px;
 }
 
 .loader-line{
-    width:90px;
+    width:70px;
     height:1px;
-
     background:var(--gold);
-
-    margin:auto;
+    margin:18px auto;
 }
 
-.loader-sub{
-    margin-top:18px;
-
-    color:var(--gold-dark);
-
+.loader-small{
+    color:#8d8068;
     font-size:8px;
-
-    letter-spacing:5px;
-}
-
-@keyframes loaderFade{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
+    letter-spacing:4px;
 }
 
 
 /* =====================================================
-   NAVIGATION
+   NAVBAR
 ===================================================== */
 
-.navbar{
+.nav{
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     z-index:1000;
 
-    padding:32px 6%;
+    padding:25px 6%;
 
     display:flex;
-
-    align-items:flex-start;
-
+    align-items:center;
     justify-content:space-between;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.95),
-            rgba(0,0,0,.45),
-            transparent
-        );
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.92),
+        rgba(0,0,0,0)
+    );
 }
 
-
-/* LOGO IS COMPLETELY SEPARATE */
-
-.brand{
-    display:block;
-
-    width:280px;
-
+.logo{
+    font-family:"Cormorant Garamond",serif;
     color:var(--gold-light);
-
-    font-family:'Cormorant Garamond',serif;
-
     font-size:25px;
-
     letter-spacing:4px;
-
-    line-height:1.15;
-
-    white-space:normal;
 }
 
-.brand-line{
+.logo span{
     display:block;
-
-    width:48px;
-
-    height:1px;
-
-    background:var(--gold);
-
-    margin-top:10px;
-
-    margin-bottom:9px;
-}
-
-.brand-sub{
-    display:block;
-
-    color:var(--gold-dark);
-
-    font-family:'Montserrat',sans-serif;
-
+    margin-top:5px;
+    color:#9e8a63;
+    font-family:Inter,sans-serif;
     font-size:7px;
-
     letter-spacing:3px;
-
-    line-height:1.5;
 }
 
-
-/* MENU */
-
-.menu{
+.nav-links{
     display:flex;
-
     gap:30px;
-
     list-style:none;
-
-    padding-top:4px;
 }
 
-.menu a{
-    color:var(--cream);
-
-    font-size:8px;
-
-    letter-spacing:2px;
-
+.nav-links a{
+    color:#d6d0c4;
+    font-size:9px;
+    letter-spacing:1.8px;
     text-transform:uppercase;
-
     transition:.3s;
 }
 
-.menu a:hover{
+.nav-links a:hover{
     color:var(--gold-light);
 }
 
@@ -228,431 +162,190 @@ h1,h2,h3{
 
 .hero{
     min-height:100vh;
-
     position:relative;
 
-    overflow:hidden;
-
     display:flex;
-
-    justify-content:center;
-
     align-items:center;
 
-    text-align:center;
-
     background:
-        radial-gradient(
-            ellipse at 18% 45%,
-            rgba(201,164,92,.13) 0%,
-            rgba(201,164,92,.05) 18%,
-            transparent 42%
-        ),
-
-        radial-gradient(
-            ellipse at 87% 65%,
-            rgba(201,164,92,.10) 0%,
-            rgba(201,164,92,.03) 20%,
-            transparent 45%
-        ),
-
         linear-gradient(
-            rgba(0,0,0,.20),
-            rgba(0,0,0,.75)
+            90deg,
+            rgba(0,0,0,.83),
+            rgba(0,0,0,.38),
+            rgba(0,0,0,.72)
         ),
-
         url("images/hero.jpg") center/cover no-repeat;
 }
 
-
-/* =====================================================
-   LUXURY FLORAL ORNAMENTS
-===================================================== */
-
-.ornament-left{
+.hero::after{
+    content:"";
     position:absolute;
+    inset:0;
 
-    left:-100px;
-    top:18%;
-
-    width:430px;
-    height:600px;
-
-    opacity:.24;
-
-    transform:rotate(-14deg);
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(198,161,91,.14),
+            transparent 35%
+        );
 
     pointer-events:none;
 }
-
-.ornament-left::before,
-.ornament-left::after{
-    content:"";
-
-    position:absolute;
-
-    border:1px solid var(--gold);
-
-    border-radius:100% 0 100% 0;
-
-    transform:rotate(35deg);
-}
-
-.ornament-left::before{
-    width:230px;
-    height:390px;
-
-    left:60px;
-    top:60px;
-}
-
-.ornament-left::after{
-    width:150px;
-    height:280px;
-
-    left:170px;
-    top:200px;
-
-    transform:rotate(-25deg);
-}
-
-
-/* GOLD LEAVES */
-
-.leaf{
-    position:absolute;
-
-    width:95px;
-    height:180px;
-
-    border:1px solid var(--gold);
-
-    border-radius:100% 0 100% 0;
-
-    opacity:.8;
-}
-
-.leaf.one{
-    left:70px;
-    top:70px;
-
-    transform:rotate(-30deg);
-}
-
-.leaf.two{
-    left:170px;
-    top:140px;
-
-    transform:rotate(15deg);
-}
-
-.leaf.three{
-    left:80px;
-    top:280px;
-
-    transform:rotate(-15deg);
-}
-
-.leaf.four{
-    left:190px;
-    top:330px;
-
-    transform:rotate(30deg);
-}
-
-
-/* RIGHT ORNAMENT */
-
-.ornament-right{
-    position:absolute;
-
-    right:-100px;
-    bottom:-90px;
-
-    width:400px;
-    height:500px;
-
-    opacity:.20;
-
-    transform:rotate(25deg);
-
-    pointer-events:none;
-}
-
-.ornament-right::before,
-.ornament-right::after{
-    content:"";
-
-    position:absolute;
-
-    border:1px solid var(--gold);
-
-    border-radius:100% 0 100% 0;
-}
-
-.ornament-right::before{
-    width:220px;
-    height:380px;
-
-    right:80px;
-    bottom:20px;
-}
-
-.ornament-right::after{
-    width:140px;
-    height:250px;
-
-    right:190px;
-    bottom:100px;
-}
-
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
 
 .hero-content{
     position:relative;
+    z-index:2;
 
-    z-index:5;
+    width:min(850px,90%);
 
-    width:min(900px,90%);
-
+    margin-left:9%;
     padding-top:70px;
 }
 
-
-/* SMALL LINE */
-
-.hero-eyebrow{
-    display:block;
-
+.eyebrow{
     color:var(--gold-light);
-
     font-size:9px;
-
-    letter-spacing:6px;
-
-    margin-bottom:28px;
-
-    line-height:1.8;
+    letter-spacing:5px;
+    margin-bottom:25px;
 }
 
-
-/* MAIN TITLE */
-
-.hero-title{
-    display:block;
-
-    color:var(--gold-light);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(58px,9vw,125px);
-
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(60px,8vw,112px);
     font-weight:500;
-
-    letter-spacing:9px;
-
-    line-height:1.05;
-
-    text-transform:uppercase;
-
-    text-shadow:
-        0 0 30px rgba(201,164,92,.12),
-        0 10px 30px rgba(0,0,0,.8);
-
-    margin:0;
-
-    padding:0;
+    line-height:.88;
+    letter-spacing:2px;
+    color:#eee9df;
+    max-width:800px;
 }
 
-
-/* DECORATIVE LINE */
-
-.hero-divider{
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin:30px 0 24px;
+.hero h1 span{
+    color:var(--gold-light);
 }
-
-.hero-divider span{
-    width:55px;
-
-    height:1px;
-
-    background:var(--gold-dark);
-}
-
-.hero-divider i{
-    width:6px;
-    height:6px;
-
-    border:1px solid var(--gold);
-
-    transform:rotate(45deg);
-}
-
-
-/* DESCRIPTION */
 
 .hero-description{
-    display:block;
+    max-width:570px;
+    margin-top:30px;
 
-    max-width:550px;
+    color:#c0bbb0;
 
-    margin:0 auto 30px;
-
-    color:var(--cream);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:21px;
-
-    letter-spacing:.5px;
-
-    line-height:1.5;
+    font-size:12px;
+    line-height:2;
 }
 
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:32px;
+}
 
-/* BUTTON */
-
-.hero-button{
+.btn{
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
-    min-width:185px;
+    min-width:155px;
+    height:48px;
 
-    height:52px;
+    padding:0 24px;
 
-    border:1px solid var(--gold-dark);
+    border:1px solid var(--gold);
 
     color:var(--gold-light);
 
     font-size:8px;
-
-    letter-spacing:3px;
-
+    letter-spacing:2.5px;
     text-transform:uppercase;
 
-    transition:.4s;
-
-    background:rgba(0,0,0,.25);
+    transition:.35s;
 }
 
-.hero-button:hover{
+.btn:hover{
     background:var(--gold);
+    color:#080808;
+}
 
-    color:#080705;
+.btn-filled{
+    background:var(--gold);
+    color:#090909;
+}
 
-    border-color:var(--gold);
+.btn-filled:hover{
+    background:var(--gold-light);
 }
 
 
-/* SCROLL IS COMPLETELY SEPARATE */
+/* =====================================================
+   SCROLL
+===================================================== */
 
-.scroll-indicator{
+.scroll{
     position:absolute;
+    z-index:4;
 
-    z-index:10;
-
-    bottom:32px;
-
+    bottom:30px;
     left:50%;
 
     transform:translateX(-50%);
 
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:var(--gold-dark);
+    color:#9f906f;
 
     font-size:7px;
-
     letter-spacing:4px;
 
-    white-space:nowrap;
+    text-align:center;
 }
 
-.scroll-line{
-    width:1px;
+.scroll::before{
+    content:"";
 
+    display:block;
+
+    width:1px;
     height:35px;
 
     background:linear-gradient(
         var(--gold),
         transparent
     );
+
+    margin:0 auto 10px;
 }
 
 
 /* =====================================================
-   SECTION SYSTEM
+   GENERAL SECTION
 ===================================================== */
 
-.section{
-    padding:115px 7%;
-
-    position:relative;
-
-    background:var(--black);
+section{
+    padding:110px 7%;
 }
 
-.section-dark{
-    background:
-        radial-gradient(
-            ellipse at 80% 20%,
-            rgba(201,164,92,.07),
-            transparent 35%
-        ),
-        var(--black2);
+.section-head{
+    max-width:750px;
+    margin-bottom:55px;
 }
 
-.label{
+.kicker{
     color:var(--gold);
-
     font-size:8px;
-
-    letter-spacing:5px;
-
+    letter-spacing:4px;
     text-transform:uppercase;
-
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
-.heading{
-    color:var(--gold-light);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:65px;
-
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:64px;
     line-height:.98;
-
-    margin-bottom:28px;
+    font-weight:500;
+    color:#e9e3d7;
 }
 
-.text{
+.section-text{
+    margin-top:20px;
     color:var(--muted);
-
-    max-width:650px;
-
     font-size:11px;
-
     line-height:2;
 }
 
@@ -661,59 +354,93 @@ h1,h2,h3{
    ABOUT
 ===================================================== */
 
+.about{
+    background:
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(198,161,91,.08),
+            transparent 28%
+        ),
+        var(--bg-soft);
+}
+
 .about-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:70px;
-
     align-items:center;
 }
 
-.image-box{
-    min-height:550px;
-
-    border:1px solid rgba(201,164,92,.18);
+.about-image{
+    min-height:520px;
 
     background:
         linear-gradient(
-            rgba(0,0,0,.12),
-            rgba(0,0,0,.25)
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.3)
         ),
         url("images/about.jpg") center/cover no-repeat;
 }
 
-.experience-box{
-    margin-top:45px;
-
+.stats{
     display:flex;
-
-    align-items:center;
-
-    gap:18px;
+    gap:55px;
+    margin-top:40px;
 }
 
-.experience-number{
-    color:var(--gold);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:85px;
-
-    line-height:.8;
+.stat-number{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold-light);
+    font-size:60px;
 }
 
-.experience-label{
-    color:var(--cream);
-
+.stat-label{
+    color:#8e897f;
     font-size:8px;
-
-    letter-spacing:3px;
-
-    line-height:1.8;
-
+    letter-spacing:2px;
     text-transform:uppercase;
+}
+
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.features{
+    background:var(--bg);
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--border);
+}
+
+.feature{
+    min-height:220px;
+    padding:40px 30px;
+    background:var(--card);
+}
+
+.feature-number{
+    color:#766340;
+    font-size:8px;
+    letter-spacing:3px;
+}
+
+.feature h3{
+    margin:20px 0 12px;
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    color:var(--gold-light);
+}
+
+.feature p{
+    color:#8e8b84;
+    font-size:10px;
+    line-height:1.9;
 }
 
 
@@ -721,78 +448,67 @@ h1,h2,h3{
    SPACES
 ===================================================== */
 
-.space-grid{
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:22px;
+.spaces{
+    background:var(--bg-soft);
 }
 
-.space{
-    min-height:550px;
+.space-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.space-card{
+    min-height:570px;
 
     position:relative;
 
     display:flex;
-
     align-items:flex-end;
 
     overflow:hidden;
 
-    border:1px solid rgba(201,164,92,.18);
+    background-size:cover;
+    background-position:center;
 }
 
-.space::after{
+.space-card::after{
     content:"";
-
     position:absolute;
-
     inset:0;
 
-    background:
-        linear-gradient(
-            transparent 25%,
-            rgba(0,0,0,.94)
-        );
+    background:linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.9)
+    );
 }
 
-.indoor{
-    background:url("images/indoor.jpg") center/cover;
+.space-indoor{
+    background-image:url("images/indoor.jpg");
 }
 
-.outdoor{
-    background:url("images/outdoor.jpg") center/cover;
+.space-outdoor{
+    background-image:url("images/outdoor.jpg");
 }
 
 .space-content{
     position:relative;
-
-    z-index:3;
-
-    padding:45px;
+    z-index:2;
+    padding:42px;
 }
 
-.space-title{
-    color:var(--gold-light);
-
-    font-size:55px;
-
-    margin-bottom:15px;
+.space-content h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:57px;
+    color:#eee7d9;
 }
 
-.space-text{
-    max-width:420px;
-
-    color:var(--cream);
-
-    font-size:11px;
-
+.space-content p{
+    max-width:430px;
+    color:#bbb4a8;
+    font-size:10px;
     line-height:1.9;
-
-    margin-bottom:25px;
+    margin:12px 0 22px;
 }
 
 
@@ -800,74 +516,67 @@ h1,h2,h3{
    EVENTS
 ===================================================== */
 
-.event-grid{
-    margin-top:55px;
+.events{
+    background:var(--bg);
+}
 
+.events-grid{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:15px;
 }
 
 .event{
-    min-height:350px;
+    min-height:370px;
 
     position:relative;
 
     display:flex;
-
     align-items:flex-end;
 
-    border:1px solid rgba(201,164,92,.15);
-
-    background-size:cover;
+    overflow:hidden;
 
     background-position:center;
+    background-size:cover;
 }
 
 .event::after{
     content:"";
-
     position:absolute;
-
     inset:0;
 
-    background:
-        linear-gradient(
-            transparent,
-            rgba(0,0,0,.94)
-        );
+    background:linear-gradient(
+        transparent 25%,
+        rgba(0,0,0,.92)
+    );
 }
 
-.event:nth-child(1){
+.event-content{
+    position:relative;
+    z-index:2;
+    padding:28px;
+}
+
+.event-content h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    color:#eee6d7;
+}
+
+.event-1{
     background-image:url("images/wedding.jpg");
 }
 
-.event:nth-child(2){
-    background-image:url("images/anniversary.jpg");
+.event-2{
+    background-image:url("images/university.jpg");
 }
 
-.event:nth-child(3){
+.event-3{
     background-image:url("images/corporate.jpg");
 }
 
-.event:nth-child(4){
+.event-4{
     background-image:url("images/celebration.jpg");
-}
-
-.event-name{
-    position:relative;
-
-    z-index:3;
-
-    padding:25px;
-
-    color:var(--gold-light);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:34px;
 }
 
 
@@ -875,42 +584,37 @@ h1,h2,h3{
    FARM HOUSE
 ===================================================== */
 
-.farm{
-    min-height:680px;
+.farmhouse{
+    min-height:650px;
 
     display:flex;
-
     align-items:center;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.92),
-            rgba(0,0,0,.35)
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.32)
         ),
         url("images/farm-house.jpg") center/cover no-repeat;
 }
 
-.farm-title{
-    color:var(--gold-light);
-
-    font-size:95px;
-
-    line-height:.9;
-
-    margin-bottom:25px;
+.farmhouse-content{
+    max-width:650px;
 }
 
-.farm-text{
-    max-width:600px;
+.farmhouse h2{
+    font-family:"Cormorant Garamond",serif;
+    color:#eee6d7;
+    font-size:82px;
+    line-height:.9;
+}
 
-    color:var(--cream);
-
-    font-size:12px;
-
+.farmhouse p{
+    margin:25px 0 30px;
+    color:#c0b9ad;
+    font-size:11px;
     line-height:2;
-
-    margin-bottom:30px;
 }
 
 
@@ -918,96 +622,77 @@ h1,h2,h3{
    SERVICES
 ===================================================== */
 
-.services-grid{
-    margin-top:55px;
+.services{
+    background:var(--bg-soft);
+}
 
+.service-grid{
     display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:1px;
-
-    background:rgba(201,164,92,.16);
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .service{
-    min-height:210px;
+    padding:40px 30px;
 
-    padding:45px 30px;
+    border:1px solid var(--border);
 
-    background:#080706;
+    background:#0d0f10;
 }
 
-.service-number{
-    color:var(--gold-dark);
-
-    font-size:9px;
-
-    letter-spacing:3px;
+.service-icon{
+    color:var(--gold);
+    font-size:23px;
 }
 
 .service h3{
+    font-family:"Cormorant Garamond",serif;
     color:var(--gold-light);
-
-    font-size:30px;
-
-    margin:17px 0 10px;
+    font-size:31px;
+    margin:18px 0 10px;
 }
 
 .service p{
-    color:var(--muted);
-
+    color:#898780;
     font-size:10px;
-
-    line-height:1.8;
+    line-height:1.9;
 }
 
 
 /* =====================================================
-   15 YEARS
+   EXPERIENCE
 ===================================================== */
 
 .experience{
-    min-height:600px;
+    min-height:580px;
 
     display:flex;
-
-    justify-content:center;
-
     align-items:center;
+    justify-content:center;
 
     text-align:center;
 
     background:
         linear-gradient(
-            rgba(0,0,0,.65),
-            rgba(0,0,0,.84)
+            rgba(0,0,0,.6),
+            rgba(0,0,0,.88)
         ),
         url("images/experience.jpg") center/cover no-repeat;
 }
 
-.experience-title{
-    color:var(--gold-light);
-
+.experience h2{
+    font-family:"Cormorant Garamond",serif;
+    color:#eee5d6;
     font-size:90px;
-
-    line-height:.9;
-
-    margin-bottom:25px;
+    line-height:.85;
 }
 
-.experience-text{
+.experience p{
     max-width:600px;
-
-    margin:0 auto 30px;
-
-    color:var(--cream);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:21px;
-
-    line-height:1.5;
+    margin:25px auto 30px;
+    color:#c1b9aa;
+    font-size:12px;
+    line-height:2;
 }
 
 
@@ -1015,32 +700,30 @@ h1,h2,h3{
    GALLERY
 ===================================================== */
 
+.gallery{
+    background:var(--bg);
+}
+
 .gallery-grid{
-    margin-top:55px;
-
-    columns:3 280px;
-
-    column-gap:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
 }
 
-.gallery-grid img{
+.gallery-item{
+    overflow:hidden;
+    height:310px;
+}
+
+.gallery-item img{
     width:100%;
-
-    display:block;
-
-    margin-bottom:15px;
-
-    break-inside:avoid;
-
-    border:1px solid rgba(201,164,92,.15);
-
-    transition:.4s;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
 }
 
-.gallery-grid img:hover{
-    opacity:.75;
-
-    transform:scale(.985);
+.gallery-item:hover img{
+    transform:scale(1.05);
 }
 
 
@@ -1051,126 +734,97 @@ h1,h2,h3{
 .reviews{
     background:
         radial-gradient(
-            ellipse at center,
-            rgba(201,164,92,.07),
-            transparent 50%
+            circle at center,
+            rgba(198,161,91,.07),
+            transparent 40%
         ),
-        var(--black);
+        var(--bg-soft);
 }
 
 .review-grid{
-    margin-top:55px;
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:20px;
 }
 
 .review{
-    padding:42px 32px;
-
-    background:#080706;
-
-    border:1px solid rgba(201,164,92,.18);
+    padding:40px 30px;
+    background:#0c0e0f;
+    border:1px solid var(--border);
 }
 
 .stars{
     color:var(--gold-light);
-
-    font-size:14px;
-
     letter-spacing:5px;
-
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
 .review p{
-    color:var(--cream);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:19px;
-
-    line-height:1.6;
-
+    font-family:"Cormorant Garamond",serif;
+    font-size:21px;
+    line-height:1.55;
+    color:#ddd5c7;
     font-style:italic;
 }
 
-.client{
+.reviewer{
     margin-top:25px;
-
     color:var(--gold);
-
     font-size:8px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
 }
 
 
 /* =====================================================
-   LOCATION
+   LOCATION / CONTACT
 ===================================================== */
 
-.location{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
+.contact{
     padding:0;
 
-    background:#050504;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    background:#0b0c0d;
 }
 
-.location-image{
-    min-height:560px;
+.contact-image{
+    min-height:550px;
 
     background:
         linear-gradient(
-            rgba(0,0,0,.12),
-            rgba(0,0,0,.35)
+            rgba(0,0,0,.1),
+            rgba(0,0,0,.4)
         ),
         url("images/location.jpg") center/cover no-repeat;
 }
 
-.location-content{
-    padding:90px 9%;
+.contact-content{
+    padding:80px 10%;
 
     display:flex;
-
-    justify-content:center;
-
     flex-direction:column;
+    justify-content:center;
 }
 
-.location-title{
-    color:var(--gold-light);
-
+.contact-content h2{
+    font-family:"Cormorant Garamond",serif;
     font-size:65px;
-
-    line-height:.95;
-
-    margin-bottom:25px;
+    line-height:.9;
+    color:#eee5d6;
 }
 
 .address{
-    color:var(--cream);
-
+    margin:25px 0;
+    color:#b7b0a5;
     font-size:11px;
-
     line-height:2;
-
-    margin-bottom:30px;
 }
 
 .contact-buttons{
     display:flex;
-
     gap:12px;
-
     flex-wrap:wrap;
 }
 
@@ -1179,44 +833,32 @@ h1,h2,h3{
    FOOTER
 ===================================================== */
 
-.footer{
+footer{
     padding:60px 7%;
-
     text-align:center;
-
-    background:#020202;
-
-    border-top:1px solid rgba(201,164,92,.18);
+    background:#060707;
+    border-top:1px solid var(--border);
 }
 
-.footer-title{
+.footer-logo{
+    font-family:"Cormorant Garamond",serif;
     color:var(--gold-light);
-
-    font-family:'Cormorant Garamond',serif;
-
     font-size:38px;
-
     letter-spacing:5px;
 }
 
 .footer-sub{
-    margin-top:12px;
-
-    color:var(--gold-dark);
-
+    margin-top:10px;
+    color:#77694f;
     font-size:7px;
-
     letter-spacing:4px;
 }
 
 .footer-copy{
-    margin-top:20px;
-
-    color:#625d54;
-
+    margin-top:22px;
+    color:#5e5d58;
     font-size:8px;
-
-    letter-spacing:2px;
+    letter-spacing:1px;
 }
 
 
@@ -1224,67 +866,35 @@ h1,h2,h3{
    MOBILE
 ===================================================== */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
-    .navbar{
-        padding:22px 5%;
+    .nav{
+        padding:20px 5%;
     }
 
-    .brand{
-        width:210px;
-
-        font-size:19px;
-    }
-
-    .menu{
+    .nav-links{
         display:none;
     }
 
-    .hero-title{
-        font-size:55px;
-
-        letter-spacing:5px;
-    }
-
-    .hero-description{
-        font-size:18px;
-    }
-
-    .ornament-left{
-        left:-180px;
-
-        opacity:.15;
-    }
-
-    .ornament-right{
-        right:-180px;
-
-        opacity:.12;
-    }
-
-    .section{
-        padding:80px 6%;
-    }
-
-    .heading{
-        font-size:52px;
+    .hero-content{
+        margin-left:6%;
     }
 
     .about-grid,
     .space-grid,
-    .location{
+    .contact{
         grid-template-columns:1fr;
     }
 
-    .image-box{
-        min-height:400px;
-    }
-
-    .event-grid{
+    .feature-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .services-grid{
+    .events-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .service-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -1292,52 +902,64 @@ h1,h2,h3{
         grid-template-columns:1fr;
     }
 
-    .farm-title,
-    .experience-title{
-        font-size:58px;
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .location-image{
+    .contact-image{
         min-height:350px;
     }
 }
 
-@media(max-width:520px){
 
-    .brand{
-        font-size:17px;
+@media(max-width:560px){
 
-        letter-spacing:3px;
+    section{
+        padding:80px 6%;
     }
 
-    .brand-sub{
-        font-size:6px;
+    .logo{
+        font-size:19px;
     }
 
-    .hero-title{
-        font-size:48px;
-
-        letter-spacing:4px;
+    .hero h1{
+        font-size:54px;
     }
 
-    .hero-eyebrow{
-        font-size:7px;
-
-        letter-spacing:4px;
+    .hero-description{
+        font-size:10px;
     }
 
-    .event-grid,
-    .services-grid{
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .section-title{
+        font-size:51px;
+    }
+
+    .feature-grid,
+    .events-grid,
+    .service-grid,
+    .gallery-grid{
         grid-template-columns:1fr;
     }
 
-    .space-title{
-        font-size:45px;
+    .space-card{
+        min-height:470px;
     }
 
-    .farm-title,
-    .experience-title{
-        font-size:50px;
+    .farmhouse h2{
+        font-size:58px;
+    }
+
+    .experience h2{
+        font-size:58px;
+    }
+
+    .stats{
+        gap:25px;
     }
 }
 
@@ -1352,17 +974,17 @@ h1,h2,h3{
      LOADER
 ===================================================== -->
 
-<div class="loader">
+<div class="loader" id="loader">
 
-    <div class="loader-box">
+    <div class="loader-inner">
 
-        <div class="loader-brand">
+        <div class="loader-title">
             GRAND MARQUEE
         </div>
 
         <div class="loader-line"></div>
 
-        <div class="loader-sub">
+        <div class="loader-small">
             DEFENCE • LAHORE
         </div>
 
@@ -1372,49 +994,35 @@ h1,h2,h3{
 
 
 <!-- =====================================================
-     NAVBAR
+     NAVIGATION
 ===================================================== -->
 
-<nav class="navbar">
+<nav class="nav">
 
-    <a href="#home" class="brand">
+    <a href="#home" class="logo">
 
         GRAND MARQUEE DEFENCE
 
-        <span class="brand-line"></span>
-
-        <span class="brand-sub">
+        <span>
             EVENTS • WEDDINGS • CELEBRATIONS
         </span>
 
     </a>
 
 
-    <ul class="menu">
+    <ul class="nav-links">
 
-        <li>
-            <a href="#about">About</a>
-        </li>
+        <li><a href="#about">About</a></li>
 
-        <li>
-            <a href="#spaces">Spaces</a>
-        </li>
+        <li><a href="#spaces">Spaces</a></li>
 
-        <li>
-            <a href="#events">Events</a>
-        </li>
+        <li><a href="#events">Events</a></li>
 
-        <li>
-            <a href="#gallery">Gallery</a>
-        </li>
+        <li><a href="#gallery">Gallery</a></li>
 
-        <li>
-            <a href="#reviews">Reviews</a>
-        </li>
+        <li><a href="#reviews">Reviews</a></li>
 
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
+        <li><a href="#contact">Contact</a></li>
 
     </ul>
 
@@ -1427,69 +1035,43 @@ h1,h2,h3{
 
 <header class="hero" id="home">
 
-
-    <div class="ornament-left">
-
-        <span class="leaf one"></span>
-
-        <span class="leaf two"></span>
-
-        <span class="leaf three"></span>
-
-        <span class="leaf four"></span>
-
-    </div>
-
-
-    <div class="ornament-right"></div>
-
-
     <div class="hero-content">
 
-
-        <div class="hero-eyebrow">
-            A DESTINATION FOR EXTRAORDINARY MOMENTS
+        <div class="eyebrow">
+            GRAND MARQUEE DEFENCE
         </div>
 
-
-        <h1 class="hero-title">
-            GRAND<br>
-            MARQUEE<br>
-            DEFENCE
+        <h1>
+            Celebrate Your
+            <span>Special Moments</span>
         </h1>
 
-
-        <div class="hero-divider">
-
-            <span></span>
-
-            <i></i>
-
-            <span></span>
-
-        </div>
-
-
         <p class="hero-description">
-            Where timeless celebrations meet
-            elegant spaces and unforgettable experiences.
+
+            A refined destination for weddings,
+            university events, corporate gatherings
+            and unforgettable celebrations.
+
         </p>
 
 
-        <a href="#spaces" class="hero-button">
-            Explore Our Spaces
-        </a>
+        <div class="hero-buttons">
 
+            <a href="#events" class="btn btn-filled">
+                Explore Events
+            </a>
+
+            <a href="#contact" class="btn">
+                Visit Us
+            </a>
+
+        </div>
 
     </div>
 
 
-    <div class="scroll-indicator">
-
-        <div class="scroll-line"></div>
-
+    <div class="scroll">
         SCROLL TO EXPLORE
-
     </div>
 
 </header>
@@ -1499,46 +1081,58 @@ h1,h2,h3{
      ABOUT
 ===================================================== -->
 
-<section class="section section-dark" id="about">
+<section class="about" id="about">
 
     <div class="about-grid">
 
-
-        <div class="image-box"></div>
+        <div class="about-image"></div>
 
 
         <div>
 
-            <div class="label">
-                ABOUT GRAND MARQUEE DEFENCE
+            <div class="kicker">
+                About Grand Marquee Defence
             </div>
 
-            <h2 class="heading">
-                Moments Made<br>
-                Memorable
+            <h2 class="section-title">
+                A Legacy Of
+                Beautiful Moments
             </h2>
 
-            <p class="text">
+            <p class="section-text">
 
-                Grand Marquee Defence is a premium destination
-                for weddings, university events, corporate
-                gatherings, anniversaries and celebrations.
+                Grand Marquee Defence is designed for
+                celebrations that deserve something special.
 
-                Our indoor and outdoor spaces are designed
-                to create beautiful experiences and lasting memories.
+                From elegant weddings and university events
+                to corporate gatherings, anniversaries and
+                private celebrations, our spaces bring
+                sophistication and warmth to every occasion.
 
             </p>
 
 
-            <div class="experience-box">
+            <div class="stats">
 
-                <div class="experience-number">
-                    15
+                <div>
+                    <div class="stat-number">
+                        15+
+                    </div>
+
+                    <div class="stat-label">
+                        Years Experience
+                    </div>
                 </div>
 
-                <div class="experience-label">
-                    Years Of<br>
-                    Experience
+
+                <div>
+                    <div class="stat-number">
+                        100%
+                    </div>
+
+                    <div class="stat-label">
+                        Memorable Moments
+                    </div>
                 </div>
 
             </div>
@@ -1551,39 +1145,189 @@ h1,h2,h3{
 
 
 <!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section class="features">
+
+    <div class="section-head">
+
+        <div class="kicker">
+            The Grand Marquee Difference
+        </div>
+
+        <h2 class="section-title">
+            Designed For
+            Extraordinary Events
+        </h2>
+
+        <p class="section-text">
+            Every detail is created to make your
+            celebration feel effortless, elegant
+            and unforgettable.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <h3>
+                Premium Spaces
+            </h3>
+
+            <p>
+                Beautiful indoor and outdoor spaces
+                designed for elegant celebrations.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <h3>
+                Trusted Experience
+            </h3>
+
+            <p>
+                More than 15 years of experience
+                creating memorable events.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <h3>
+                Beautiful Décor
+            </h3>
+
+            <p>
+                Elegant décor and thoughtful details
+                that transform every occasion.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <h3>
+                Catering
+            </h3>
+
+            <p>
+                Hospitality and catering created
+                to complement your celebration.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                05
+            </div>
+
+            <h3>
+                Every Occasion
+            </h3>
+
+            <p>
+                Weddings, university events,
+                corporate gatherings and celebrations.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                06
+            </div>
+
+            <h3>
+                Personal Attention
+            </h3>
+
+            <p>
+                A dedicated experience from the
+                first conversation to the final moment.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      SPACES
 ===================================================== -->
 
-<section class="section" id="spaces">
+<section class="spaces" id="spaces">
 
-    <div class="label">
-        OUR SPACES
+    <div class="section-head">
+
+        <div class="kicker">
+            Our Spaces
+        </div>
+
+        <h2 class="section-title">
+            Indoor & Outdoor
+        </h2>
+
+        <p class="section-text">
+            Two beautiful environments, one unforgettable
+            destination for your special occasion.
+        </p>
+
     </div>
-
-    <h2 class="heading">
-        Designed For<br>
-        Extraordinary Events
-    </h2>
 
 
     <div class="space-grid">
 
 
-        <div class="space indoor">
+        <div class="space-card space-indoor">
 
             <div class="space-content">
 
-                <h3 class="space-title">
+                <h3>
                     Indoor
                 </h3>
 
-                <p class="space-text">
-                    An elegant indoor setting designed
-                    for weddings, celebrations and
-                    unforgettable gatherings.
+                <p>
+                    An elegant indoor environment
+                    for weddings, celebrations,
+                    university events and corporate occasions.
                 </p>
 
-                <a href="#contact" class="hero-button">
+                <a href="#contact" class="btn">
                     Discover Indoor
                 </a>
 
@@ -1592,21 +1336,21 @@ h1,h2,h3{
         </div>
 
 
-        <div class="space outdoor">
+        <div class="space-card space-outdoor">
 
             <div class="space-content">
 
-                <h3 class="space-title">
+                <h3>
                     Outdoor
                 </h3>
 
-                <p class="space-text">
-                    An open-air environment for
-                    beautiful weddings, celebrations
-                    and memorable events.
+                <p>
+                    An open-air setting designed
+                    for beautiful evenings and
+                    unforgettable celebrations.
                 </p>
 
-                <a href="#contact" class="hero-button">
+                <a href="#contact" class="btn">
                     Discover Outdoor
                 </a>
 
@@ -1624,52 +1368,76 @@ h1,h2,h3{
      EVENTS
 ===================================================== -->
 
-<section class="section section-dark" id="events">
+<section class="events" id="events">
 
-    <div class="label">
-        OUR EVENTS
+    <div class="section-head">
+
+        <div class="kicker">
+            Every Occasion
+        </div>
+
+        <h2 class="section-title">
+            Beautifully Celebrated
+        </h2>
+
+        <p class="section-text">
+            Whatever the occasion, Grand Marquee Defence
+            gives it the setting it deserves.
+        </p>
+
     </div>
 
-    <h2 class="heading">
-        Every Occasion,<br>
-        Beautifully Celebrated
-    </h2>
+
+    <div class="events-grid">
 
 
-    <div class="event-grid">
+        <div class="event event-1">
 
+            <div class="event-content">
 
-        <div class="event">
+                <h3>
+                    Weddings
+                </h3>
 
-            <div class="event-name">
-                Wedding
             </div>
 
         </div>
 
 
-        <div class="event">
+        <div class="event event-2">
 
-            <div class="event-name">
-                Anniversary
+            <div class="event-content">
+
+                <h3>
+                    University Events
+                </h3>
+
             </div>
 
         </div>
 
 
-        <div class="event">
+        <div class="event event-3">
 
-            <div class="event-name">
-                Corporate
+            <div class="event-content">
+
+                <h3>
+                    Corporate Events
+                </h3>
+
             </div>
 
         </div>
 
 
-        <div class="event">
+        <div class="event event-4">
 
-            <div class="event-name">
-                Celebration
+            <div class="event-content">
+
+                <h3>
+                    Celebrations
+                </h3>
+
             </div>
 
         </div>
@@ -1684,24 +1452,25 @@ h1,h2,h3{
      FARM HOUSE
 ===================================================== -->
 
-<section class="farm">
+<section class="farmhouse">
 
-    <div>
+    <div class="farmhouse-content">
 
-        <div class="label">
-            OUR FARM HOUSE
+        <div class="kicker">
+            A Beautiful Escape
         </div>
 
-        <h2 class="farm-title">
+        <h2>
             Farm House
         </h2>
 
-        <p class="farm-text">
+        <p>
             A beautiful private setting for intimate
-            gatherings, celebrations and memorable moments.
+            gatherings, celebrations and unforgettable
+            moments surrounded by a peaceful atmosphere.
         </p>
 
-        <a href="#gallery" class="hero-button">
+        <a href="#gallery" class="btn btn-filled">
             Explore Farm House
         </a>
 
@@ -1714,25 +1483,29 @@ h1,h2,h3{
      SERVICES
 ===================================================== -->
 
-<section class="section section-dark">
+<section class="services">
 
-    <div class="label">
-        OUR SERVICES
+    <div class="section-head">
+
+        <div class="kicker">
+            Our Services
+        </div>
+
+        <h2 class="section-title">
+            Everything For
+            Your Perfect Event
+        </h2>
+
     </div>
 
-    <h2 class="heading">
-        Everything For<br>
-        Your Perfect Event
-    </h2>
 
-
-    <div class="services-grid">
+    <div class="service-grid">
 
 
         <div class="service">
 
-            <div class="service-number">
-                01
+            <div class="service-icon">
+                ✦
             </div>
 
             <h3>
@@ -1741,7 +1514,7 @@ h1,h2,h3{
 
             <p>
                 Elegant décor concepts designed
-                around your celebration.
+                to complement your celebration.
             </p>
 
         </div>
@@ -1749,8 +1522,8 @@ h1,h2,h3{
 
         <div class="service">
 
-            <div class="service-number">
-                02
+            <div class="service-icon">
+                ✦
             </div>
 
             <h3>
@@ -1758,7 +1531,7 @@ h1,h2,h3{
             </h3>
 
             <p>
-                Quality hospitality and catering
+                Thoughtful hospitality and catering
                 for memorable occasions.
             </p>
 
@@ -1767,8 +1540,8 @@ h1,h2,h3{
 
         <div class="service">
 
-            <div class="service-number">
-                03
+            <div class="service-icon">
+                ✦
             </div>
 
             <h3>
@@ -1776,8 +1549,8 @@ h1,h2,h3{
             </h3>
 
             <p>
-                Beautiful venue experiences
-                for your most important days.
+                Beautiful settings for weddings,
+                walima and special celebrations.
             </p>
 
         </div>
@@ -1785,8 +1558,8 @@ h1,h2,h3{
 
         <div class="service">
 
-            <div class="service-number">
-                04
+            <div class="service-icon">
+                ✦
             </div>
 
             <h3>
@@ -1794,8 +1567,44 @@ h1,h2,h3{
             </h3>
 
             <p>
-                Professional spaces for corporate
-                gatherings and special events.
+                Professional and elegant environments
+                for corporate gatherings.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                ✦
+            </div>
+
+            <h3>
+                University Events
+            </h3>
+
+            <p>
+                A memorable destination for university
+                functions and special occasions.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                ✦
+            </div>
+
+            <h3>
+                Celebrations
+            </h3>
+
+            <p>
+                Anniversaries, private celebrations
+                and moments worth remembering.
             </p>
 
         </div>
@@ -1807,30 +1616,30 @@ h1,h2,h3{
 
 
 <!-- =====================================================
-     EXPERIENCE
+     15 YEARS EXPERIENCE
 ===================================================== -->
 
 <section class="experience">
 
     <div>
 
-        <div class="label">
-            15 YEARS OF EXPERIENCE
+        <div class="kicker">
+            15 Years Of Experience
         </div>
 
-        <h2 class="experience-title">
+        <h2>
             Experience<br>
             That Matters
         </h2>
 
-        <p class="experience-text">
-            For over 15 years, Grand Marquee Defence
-            has been creating beautiful spaces,
-            elegant celebrations and unforgettable moments.
+        <p>
+            For more than 15 years, Grand Marquee Defence
+            has been creating beautiful spaces and
+            unforgettable celebrations.
         </p>
 
-        <a href="#contact" class="hero-button">
-            Talk To Us
+        <a href="#contact" class="btn">
+            Meet Grand Marquee
         </a>
 
     </div>
@@ -1842,35 +1651,52 @@ h1,h2,h3{
      GALLERY
 ===================================================== -->
 
-<section class="section" id="gallery">
+<section class="gallery" id="gallery">
 
-    <div class="label">
-        OUR GALLERY
+    <div class="section-head">
+
+        <div class="kicker">
+            Our Gallery
+        </div>
+
+        <h2 class="section-title">
+            Moments Worth
+            Remembering
+        </h2>
+
+        <p class="section-text">
+            Add your marquee, farmhouse, wedding,
+            décor and event photographs here.
+        </p>
+
     </div>
-
-    <h2 class="heading">
-        A Glimpse Of<br>
-        Grand Moments
-    </h2>
 
 
     <div class="gallery-grid">
 
-        <img src="images/gallery-1.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-1.jpg" alt="Grand Marquee Defence">
+        </div>
 
-        <img src="images/gallery-2.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-2.jpg" alt="Grand Marquee Defence">
+        </div>
 
-        <img src="images/gallery-3.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-3.jpg" alt="Grand Marquee Defence">
+        </div>
 
-        <img src="images/gallery-4.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-4.jpg" alt="Grand Marquee Defence">
+        </div>
 
-        <img src="images/gallery-5.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-5.jpg" alt="Grand Marquee Defence">
+        </div>
 
-        <img src="images/gallery-6.jpg" alt="Grand Marquee">
-
-        <img src="images/gallery-7.jpg" alt="Grand Marquee">
-
-        <img src="images/gallery-8.jpg" alt="Grand Marquee">
+        <div class="gallery-item">
+            <img src="images/gallery-6.jpg" alt="Grand Marquee Defence">
+        </div>
 
     </div>
 
@@ -1881,16 +1707,19 @@ h1,h2,h3{
      CLIENT REVIEWS
 ===================================================== -->
 
-<section class="section reviews" id="reviews">
+<section class="reviews" id="reviews">
 
-    <div class="label">
-        CLIENT REVIEWS
+    <div class="section-head">
+
+        <div class="kicker">
+            Client Reviews
+        </div>
+
+        <h2 class="section-title">
+            What Our Clients Say
+        </h2>
+
     </div>
-
-    <h2 class="heading">
-        What Our<br>
-        Clients Say
-    </h2>
 
 
     <div class="review-grid">
@@ -1903,12 +1732,12 @@ h1,h2,h3{
             </div>
 
             <p>
-                “The venue was beautiful,
-                elegant and perfectly arranged.
-                A truly memorable experience.”
+                “A beautiful venue and a wonderful
+                experience. Everything looked elegant
+                and our celebration was truly memorable.”
             </p>
 
-            <div class="client">
+            <div class="reviewer">
                 Wedding Client
             </div>
 
@@ -1922,12 +1751,12 @@ h1,h2,h3{
             </div>
 
             <p>
-                “A wonderful setting for our
-                corporate event. Everything
-                looked elegant and professional.”
+                “The team was professional and the
+                entire event came together beautifully.
+                Highly recommended.”
             </p>
 
-            <div class="client">
+            <div class="reviewer">
                 Corporate Client
             </div>
 
@@ -1941,12 +1770,12 @@ h1,h2,h3{
             </div>
 
             <p>
-                “Grand Marquee made our
-                celebration beautiful,
-                special and unforgettable.”
+                “The atmosphere, décor and service
+                made our special day even more
+                beautiful than we imagined.”
             </p>
 
-            <div class="client">
+            <div class="reviewer">
                 Celebration Client
             </div>
 
@@ -1959,45 +1788,48 @@ h1,h2,h3{
 
 
 <!-- =====================================================
-     LOCATION
+     CONTACT / LOCATION
 ===================================================== -->
 
-<section class="location" id="contact">
+<section class="contact" id="contact">
+
+    <div class="contact-image"></div>
 
 
-    <div class="location-image"></div>
+    <div class="contact-content">
 
-
-    <div class="location-content">
-
-        <div class="label">
-            FIND US
+        <div class="kicker">
+            Visit Grand Marquee Defence
         </div>
 
-        <h2 class="location-title">
-            Visit<br>
-            Grand Marquee<br>
-            Defence
+        <h2>
+            Your Next
+            Beautiful Moment
+            Starts Here
         </h2>
 
         <div class="address">
-            Main Bedian Road,<br>
-            Near DHA Phase 1,<br>
+
+            Main Bedian Road<br>
+            Near DHA Phase 1<br>
             Lahore, Pakistan
+
         </div>
 
 
         <div class="contact-buttons">
 
+            <!-- Replace these numbers with your real number -->
+
             <a
                 href="tel:+923000000000"
-                class="hero-button">
+                class="btn btn-filled">
                 Call Us
             </a>
 
             <a
                 href="https://wa.me/923000000000"
-                class="hero-button">
+                class="btn">
                 WhatsApp
             </a>
 
@@ -2012,9 +1844,9 @@ h1,h2,h3{
      FOOTER
 ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-    <div class="footer-title">
+    <div class="footer-logo">
         GRAND MARQUEE DEFENCE
     </div>
 
@@ -2027,10 +1859,70 @@ h1,h2,h3{
     </div>
 
     <div class="footer-copy">
-        © 2026 GRAND MARQUEE DEFENCE
+        © 2026 GRAND MARQUEE DEFENCE. ALL RIGHTS RESERVED.
     </div>
 
 </footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+window.addEventListener("load", function(){
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(function(){
+
+        loader.classList.add("hide");
+
+    }, 1200);
+
+});
+
+
+/* Smooth reveal on scroll */
+
+const observer = new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.08
+    }
+
+);
+
+
+document.querySelectorAll(
+    ".feature, .service, .review, .event, .space-card, .gallery-item"
+).forEach(function(element){
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(25px)";
+    element.style.transition = "opacity .8s ease, transform .8s ease";
+
+    observer.observe(element);
+
+});
+
+</script>
 
 
 </body>

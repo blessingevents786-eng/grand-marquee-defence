@@ -4,19 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Grand Marquee | Premium Events & Weddings</title>
+<title>Grand Marquee Defence | Premium Events & Weddings</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --gold:#c9a66b;
-  --cream:#f4efe7;
-  --dark:#0b0b0b;
-  --dark2:#151515;
-  --text:#ddd6cc;
+  --gold:#d4af63;
+  --gold-light:#e6c982;
+  --black:#050505;
+  --black-soft:#0b0b0b;
+  --black-card:#11100d;
+  --cream:#f5efe3;
+  --text:#d7d0c4;
+  --muted:#99938a;
 }
 
 *{
@@ -30,7 +34,7 @@ html{
 }
 
 body{
-  background:var(--dark);
+  background:var(--black);
   color:var(--text);
   font-family:'Montserrat',sans-serif;
   overflow-x:hidden;
@@ -42,16 +46,18 @@ h1,h2,h3{
 }
 
 a{
-  color:inherit;
   text-decoration:none;
+  color:inherit;
 }
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 .loader{
   position:fixed;
   inset:0;
-  background:#080808;
+  background:#030303;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -61,32 +67,38 @@ a{
 
 .loader-inner{
   text-align:center;
-  animation:loaderText 1.5s ease;
+  animation:loaderIn 1.4s ease;
 }
 
 .loader-title{
   font-family:'Cormorant Garamond',serif;
-  color:white;
-  font-size:52px;
-  letter-spacing:8px;
+  color:#fff;
+  font-size:48px;
+  letter-spacing:7px;
 }
 
 .loader-line{
-  width:80px;
+  width:90px;
   height:1px;
   background:var(--gold);
-  margin:20px auto;
+  margin:18px auto;
 }
 
 .loader-sub{
-  font-size:10px;
-  letter-spacing:5px;
-  color:#aaa;
+  font-size:9px;
+  letter-spacing:4px;
+  color:#999;
 }
 
-@keyframes loaderText{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+@keyframes loaderIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @keyframes loaderOut{
@@ -96,7 +108,9 @@ a{
   }
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   position:fixed;
@@ -104,11 +118,15 @@ nav{
   left:0;
   width:100%;
   z-index:1000;
-  padding:28px 6%;
+  padding:27px 6%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:linear-gradient(to bottom,rgba(0,0,0,.7),transparent);
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.88),
+    rgba(0,0,0,0)
+  );
 }
 
 .logo{
@@ -122,7 +140,7 @@ nav{
   display:block;
   font-family:'Montserrat',sans-serif;
   font-size:8px;
-  letter-spacing:4px;
+  letter-spacing:3px;
   color:var(--gold);
   margin-top:3px;
 }
@@ -134,7 +152,7 @@ nav{
 }
 
 .nav-links a{
-  font-size:11px;
+  font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:#eee;
@@ -145,7 +163,9 @@ nav{
   color:var(--gold);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:100vh;
@@ -154,21 +174,25 @@ nav{
   align-items:center;
   justify-content:center;
   text-align:center;
+
   background:
-    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.70)),
+    linear-gradient(
+      rgba(0,0,0,.38),
+      rgba(0,0,0,.78)
+    ),
     url("images/hero.jpg") center/cover no-repeat;
 }
 
 .hero-content{
-  max-width:900px;
+  max-width:1000px;
   padding:30px;
   animation:heroIn 1.5s ease;
 }
 
 .hero-small{
-  font-size:11px;
+  font-size:10px;
   letter-spacing:7px;
-  color:var(--gold);
+  color:var(--gold-light);
   margin-bottom:25px;
   text-transform:uppercase;
 }
@@ -176,8 +200,9 @@ nav{
 .hero h1{
   font-size:clamp(65px,10vw,145px);
   color:#fff;
-  line-height:.85;
-  letter-spacing:5px;
+  line-height:.82;
+  letter-spacing:6px;
+  text-shadow:0 5px 30px rgba(0,0,0,.7);
 }
 
 .hero p{
@@ -190,9 +215,9 @@ nav{
 
 .btn{
   display:inline-block;
-  border:1px solid rgba(201,166,107,.7);
-  padding:15px 30px;
-  font-size:10px;
+  border:1px solid rgba(212,175,99,.75);
+  padding:15px 31px;
+  font-size:9px;
   letter-spacing:3px;
   text-transform:uppercase;
   color:white;
@@ -201,30 +226,39 @@ nav{
 
 .btn:hover{
   background:var(--gold);
-  color:#111;
+  color:#050505;
+  border-color:var(--gold);
 }
 
 .scroll{
   position:absolute;
   bottom:30px;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:4px;
   color:#aaa;
 }
 
 @keyframes heroIn{
-  from{opacity:0;transform:translateY(35px)}
-  to{opacity:1;transform:translateY(0)}
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-/* COMMON */
+/* =========================
+   COMMON
+========================= */
 
 section{
-  padding:110px 7%;
+  padding:115px 7%;
 }
 
 .section-label{
-  font-size:10px;
+  font-size:9px;
   letter-spacing:5px;
   color:var(--gold);
   text-transform:uppercase;
@@ -234,20 +268,30 @@ section{
 .section-title{
   font-size:65px;
   color:white;
-  margin-bottom:25px;
+  line-height:1;
+  margin-bottom:27px;
 }
 
 .section-text{
   max-width:680px;
-  color:#aaa;
+  color:var(--muted);
   line-height:2;
-  font-size:13px;
+  font-size:12px;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-  background:#101010;
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(212,175,99,.06),
+      transparent 35%
+    ),
+    var(--black-soft);
+
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:70px;
@@ -256,11 +300,15 @@ section{
 
 .about-image{
   min-height:550px;
-  background:url("images/about.jpg") center/cover no-repeat;
-}
 
-.about-content{
-  padding-right:5%;
+  background:
+    linear-gradient(
+      rgba(0,0,0,.12),
+      rgba(0,0,0,.2)
+    ),
+    url("images/about.jpg") center/cover no-repeat;
+
+  border:1px solid rgba(212,175,99,.15);
 }
 
 .experience{
@@ -278,22 +326,25 @@ section{
 }
 
 .experience-text{
-  font-size:10px;
+  font-size:9px;
   letter-spacing:3px;
   text-transform:uppercase;
+  color:#ddd;
 }
 
-/* SPACES */
+/* =========================
+   SPACES
+========================= */
 
 .spaces{
-  background:#080808;
+  background:#050505;
 }
 
 .spaces-grid{
   margin-top:55px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
+  gap:22px;
 }
 
 .space-card{
@@ -302,13 +353,20 @@ section{
   overflow:hidden;
   display:flex;
   align-items:flex-end;
+  border:1px solid rgba(212,175,99,.13);
 }
 
 .space-card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(transparent 30%,rgba(0,0,0,.9));
+
+  background:
+    linear-gradient(
+      transparent 25%,
+      rgba(0,0,0,.92)
+    );
+
   z-index:1;
 }
 
@@ -333,22 +391,33 @@ section{
 
 .space-content p{
   font-size:12px;
-  line-height:1.8;
+  line-height:1.9;
   color:#ccc;
   max-width:420px;
   margin:15px 0 25px;
 }
 
-/* EVENTS */
+/* =========================
+   EVENTS
+========================= */
 
 .events{
-  background:#111;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(212,175,99,.05),
+      transparent 30%
+    ),
+    #0a0a0a;
 }
 
 .event-grid{
   margin-top:55px;
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:15px;
 }
 
@@ -358,40 +427,69 @@ section{
   display:flex;
   align-items:flex-end;
   overflow:hidden;
+
   background-size:cover;
   background-position:center;
+
+  border:1px solid rgba(212,175,99,.12);
 }
 
 .event-card::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(transparent,rgba(0,0,0,.85));
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.9)
+    );
 }
 
-.event-card:nth-child(1){background-image:url("images/wedding.jpg")}
-.event-card:nth-child(2){background-image:url("images/university.jpg")}
-.event-card:nth-child(3){background-image:url("images/corporate.jpg")}
-.event-card:nth-child(4){background-image:url("images/celebration.jpg")}
+.event-card:nth-child(1){
+  background-image:url("images/wedding.jpg");
+}
+
+.event-card:nth-child(2){
+  background-image:url("images/anniversary.jpg");
+}
+
+.event-card:nth-child(3){
+  background-image:url("images/corporate.jpg");
+}
+
+.event-card:nth-child(4){
+  background-image:url("images/celebration.jpg");
+}
 
 .event-name{
   position:relative;
   z-index:2;
   padding:25px;
+
   font-family:'Cormorant Garamond',serif;
   font-size:34px;
   color:white;
 }
 
-/* FARM HOUSE */
+/* =========================
+   FARM HOUSE
+========================= */
 
 .farm{
   min-height:700px;
+
   position:relative;
+
   display:flex;
   align-items:center;
+
   background:
-    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.25)),
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.25)
+    ),
     url("images/farm-house.jpg") center/cover;
 }
 
@@ -400,7 +498,7 @@ section{
 }
 
 .farm h2{
-  font-size:80px;
+  font-size:90px;
   color:white;
 }
 
@@ -408,31 +506,39 @@ section{
   margin:25px 0 30px;
   line-height:2;
   color:#ddd;
+  font-size:13px;
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 
 .services{
-  background:#0c0c0c;
+  background:#070707;
 }
 
 .service-grid{
   margin-top:50px;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:1px;
-  background:#333;
+
+  background:
+    rgba(212,175,99,.18);
 }
 
 .service{
-  background:#0c0c0c;
+  background:#0b0b0b;
   padding:45px 30px;
-  min-height:180px;
+  min-height:200px;
 }
 
 .service-number{
   color:var(--gold);
-  font-size:11px;
+  font-size:10px;
   letter-spacing:3px;
 }
 
@@ -448,16 +554,24 @@ section{
   line-height:1.8;
 }
 
-/* EXPERIENCE */
+/* =========================
+   EXPERIENCE
+========================= */
 
 .experience-section{
   min-height:600px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
+
   background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.7)),
+    linear-gradient(
+      rgba(0,0,0,.62),
+      rgba(0,0,0,.78)
+    ),
     url("images/experience.jpg") center/cover;
 }
 
@@ -473,14 +587,17 @@ section{
   line-height:2;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 
 .gallery{
-  background:#101010;
+  background:#0b0b0b;
 }
 
 .gallery-grid{
   margin-top:50px;
+
   columns:3 280px;
   column-gap:15px;
 }
@@ -488,37 +605,57 @@ section{
 .gallery-grid img{
   width:100%;
   display:block;
+
   margin-bottom:15px;
+
   break-inside:avoid;
+
+  border:1px solid rgba(212,175,99,.1);
+
   transition:.5s;
 }
 
 .gallery-grid img:hover{
   transform:scale(.98);
-  opacity:.8;
+  opacity:.82;
 }
 
-/* REVIEWS */
+/* =========================
+   REVIEWS
+========================= */
 
 .reviews{
-  background:#080808;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(212,175,99,.06),
+      transparent 45%
+    ),
+    #050505;
 }
 
 .review-grid{
   margin-top:55px;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:20px;
 }
 
 .review{
   padding:40px 30px;
-  border:1px solid #292929;
-  background:#101010;
+
+  border:
+    1px solid
+    rgba(212,175,99,.18);
+
+  background:#0c0c0c;
 }
 
 .stars{
-  color:var(--gold);
+  color:var(--gold-light);
   letter-spacing:5px;
   font-size:15px;
   margin-bottom:25px;
@@ -534,27 +671,40 @@ section{
 .client{
   margin-top:25px;
   color:white;
-  font-size:11px;
+
+  font-size:10px;
   letter-spacing:2px;
+
   text-transform:uppercase;
 }
 
-/* LOCATION */
+/* =========================
+   LOCATION
+========================= */
 
 .location{
   display:grid;
   grid-template-columns:1fr 1fr;
-  background:#111;
+
+  background:#080808;
+
   padding:0;
 }
 
 .location-image{
   min-height:550px;
-  background:url("images/location.jpg") center/cover;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.3)
+    ),
+    url("images/location.jpg") center/cover;
 }
 
 .location-content{
   padding:90px 8%;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -567,7 +717,9 @@ section{
 
 .address{
   margin:25px 0;
+
   color:#aaa;
+
   line-height:2;
   font-size:13px;
 }
@@ -578,29 +730,55 @@ section{
   flex-wrap:wrap;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  padding:50px 7%;
-  background:#070707;
+  padding:55px 7%;
+
+  background:#030303;
+
   text-align:center;
+
+  border-top:
+    1px solid
+    rgba(212,175,99,.15);
 }
 
 .footer-logo{
   font-family:'Cormorant Garamond',serif;
+
   font-size:40px;
+
   letter-spacing:5px;
+
   color:white;
+}
+
+.footer-sub{
+  margin-top:12px;
+
+  color:var(--gold);
+
+  font-size:9px;
+
+  letter-spacing:4px;
 }
 
 footer p{
   margin-top:15px;
-  color:#777;
-  font-size:10px;
+
+  color:#666;
+
+  font-size:9px;
+
   letter-spacing:2px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
 
@@ -638,7 +816,7 @@ footer p{
   }
 
   .service-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .review-grid{
@@ -647,7 +825,7 @@ footer p{
 
   .farm h2,
   .experience-section h2{
-    font-size:58px;
+    font-size:60px;
   }
 
   .location-image{
@@ -657,337 +835,646 @@ footer p{
 
 @media(max-width:520px){
 
-  .hero h1{
-    font-size:62px;
+  .logo{
+    font-size:22px;
   }
 
-  .event-grid{
+  .hero h1{
+    font-size:60px;
+  }
+
+  .event-grid,
+  .service-grid{
     grid-template-columns:1fr;
   }
 
   .space-content h3{
-    font-size:42px;
+    font-size:43px;
+  }
+
+  .farm h2,
+  .experience-section h2{
+    font-size:52px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- =========================
+     LOADING SCREEN
+========================= -->
+
 <div class="loader">
+
   <div class="loader-inner">
-    <div class="loader-title">GRAND MARQUEE</div>
+
+    <div class="loader-title">
+      GRAND MARQUEE
+    </div>
+
     <div class="loader-line"></div>
-    <div class="loader-sub">EVENTS • WEDDINGS • CELEBRATIONS</div>
+
+    <div class="loader-sub">
+      DEFENCE • EVENTS • WEDDINGS
+    </div>
+
   </div>
+
 </div>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
   <a href="#home" class="logo">
-    GRAND MARQUEE
-    <span>EVENTS & EXPERIENCES</span>
+
+    GRAND MARQUEE DEFENCE
+
+    <span>
+      EVENTS • WEDDINGS • CELEBRATIONS
+    </span>
+
   </a>
 
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#spaces">Spaces</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
+
+    <li>
+      <a href="#about">About</a>
+    </li>
+
+    <li>
+      <a href="#spaces">Spaces</a>
+    </li>
+
+    <li>
+      <a href="#events">Events</a>
+    </li>
+
+    <li>
+      <a href="#gallery">Gallery</a>
+    </li>
+
+    <li>
+      <a href="#reviews">Reviews</a>
+    </li>
+
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+
   </ul>
+
 </nav>
 
-<!-- HERO -->
-<header class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-small">A Destination For Extraordinary Moments</div>
 
-    <h1>GRAND<br>MARQUEE</h1>
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      A Destination For Extraordinary Moments
+    </div>
+
+    <h1>
+      GRAND<br>
+      MARQUEE<br>
+      DEFENCE
+    </h1>
 
     <p>
-      Where elegant spaces, unforgettable celebrations and exceptional
-      experiences come together.
+      Where elegant spaces, unforgettable celebrations
+      and exceptional experiences come together.
     </p>
 
-    <a href="#spaces" class="btn">Explore Our Spaces</a>
+    <a href="#spaces" class="btn">
+      Explore Our Spaces
+    </a>
+
   </div>
 
-  <div class="scroll">SCROLL TO EXPLORE</div>
+  <div class="scroll">
+    SCROLL TO EXPLORE
+  </div>
+
 </header>
 
-<!-- ABOUT -->
+
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section class="about" id="about">
 
   <div class="about-image"></div>
 
   <div class="about-content">
 
-    <div class="section-label">About Grand Marquee</div>
+    <div class="section-label">
+      About Grand Marquee
+    </div>
 
     <h2 class="section-title">
-      Moments Made<br>Memorable
+      Moments Made<br>
+      Memorable
     </h2>
 
     <p class="section-text">
-      Grand Marquee is a premium destination for weddings, corporate
-      gatherings, university events and unforgettable celebrations.
-      With carefully designed indoor and outdoor spaces, we create
-      an atmosphere where every occasion feels extraordinary.
+      Grand Marquee Defence is a premium destination for
+      weddings, university events, corporate gatherings,
+      anniversaries and unforgettable celebrations.
+
+      Our elegant indoor and outdoor spaces are designed
+      to make every occasion feel truly extraordinary.
     </p>
 
     <div class="experience">
-      <div class="experience-number">15</div>
-      <div class="experience-text">
-        Years of<br>Experience
+
+      <div class="experience-number">
+        15
       </div>
+
+      <div class="experience-text">
+        Years of<br>
+        Experience
+      </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- SPACES -->
+
+<!-- =========================
+     SPACES
+========================= -->
+
 <section class="spaces" id="spaces">
 
-  <div class="section-label">Our Spaces</div>
+  <div class="section-label">
+    Our Spaces
+  </div>
 
-  <h2 class="section-title">Designed For<br>Extraordinary Events</h2>
+  <h2 class="section-title">
+    Designed For<br>
+    Extraordinary Events
+  </h2>
 
   <div class="spaces-grid">
 
     <div class="space-card space-indoor">
+
       <div class="space-content">
-        <h3>Indoor</h3>
+
+        <h3>
+          Indoor
+        </h3>
+
         <p>
-          An elegant indoor environment designed for weddings,
-          corporate events, celebrations and memorable gatherings.
+          An elegant indoor environment designed
+          for weddings, corporate events,
+          celebrations and memorable gatherings.
         </p>
-        <a href="#contact" class="btn">Discover Indoor</a>
+
+        <a href="#contact" class="btn">
+          Discover Indoor
+        </a>
+
       </div>
+
     </div>
 
+
     <div class="space-card space-outdoor">
+
       <div class="space-content">
-        <h3>Outdoor</h3>
+
+        <h3>
+          Outdoor
+        </h3>
+
         <p>
-          Open-air elegance with a beautiful atmosphere for
-          celebrations, weddings and large-scale events.
+          An open-air setting for beautiful weddings,
+          celebrations and unforgettable events.
         </p>
-        <a href="#contact" class="btn">Discover Outdoor</a>
+
+        <a href="#contact" class="btn">
+          Discover Outdoor
+        </a>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- EVENTS -->
+
+<!-- =========================
+     EVENTS
+========================= -->
+
 <section class="events" id="events">
 
-  <div class="section-label">What We Host</div>
+  <div class="section-label">
+    Our Events
+  </div>
 
-  <h2 class="section-title">Every Occasion,<br>Beautifully Celebrated</h2>
+  <h2 class="section-title">
+    Every Occasion,<br>
+    Beautifully Celebrated
+  </h2>
 
   <div class="event-grid">
 
     <div class="event-card">
-      <div class="event-name">Weddings</div>
+
+      <div class="event-name">
+        Wedding
+      </div>
+
     </div>
 
-    <div class="event-card">
-      <div class="event-name">University Events</div>
-    </div>
 
     <div class="event-card">
-      <div class="event-name">Corporate Events</div>
+
+      <div class="event-name">
+        Anniversary
+      </div>
+
     </div>
 
+
     <div class="event-card">
-      <div class="event-name">Celebrations</div>
+
+      <div class="event-name">
+        Corporate
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-name">
+        Celebration
+      </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- FARM HOUSE -->
+
+<!-- =========================
+     FARM HOUSE
+========================= -->
+
 <section class="farm">
 
   <div class="farm-content">
 
-    <div class="section-label">A Private Escape</div>
+    <div class="section-label">
+      Our Farm House
+    </div>
 
-    <h2>Farm House<br>Ali Bagh</h2>
+    <h2>
+      Farm House
+    </h2>
 
     <p>
-      A beautiful destination for intimate celebrations, private
-      gatherings and unforgettable moments surrounded by an
-      elegant natural atmosphere.
+      A beautiful private setting for intimate gatherings,
+      celebrations and unforgettable moments.
     </p>
 
-    <a href="#gallery" class="btn">Explore Farm House</a>
+    <a href="#gallery" class="btn">
+      Explore Farm House
+    </a>
 
   </div>
 
 </section>
 
-<!-- SERVICES -->
+
+<!-- =========================
+     SERVICES
+========================= -->
+
 <section class="services">
 
-  <div class="section-label">Our Services</div>
+  <div class="section-label">
+    Our Services
+  </div>
 
-  <h2 class="section-title">Everything For<br>Your Perfect Event</h2>
+  <h2 class="section-title">
+    Everything For<br>
+    Your Perfect Event
+  </h2>
 
   <div class="service-grid">
 
-    <div class="service">
-      <div class="service-number">01</div>
-      <h3>Event Setup</h3>
-      <p>Professional event setup tailored to your occasion.</p>
-    </div>
 
     <div class="service">
-      <div class="service-number">02</div>
-      <h3>Décor</h3>
-      <p>Elegant décor concepts designed around your celebration.</p>
+
+      <div class="service-number">
+        01
+      </div>
+
+      <h3>
+        Décor
+      </h3>
+
+      <p>
+        Elegant décor concepts designed
+        around your celebration.
+      </p>
+
     </div>
 
-    <div class="service">
-      <div class="service-number">03</div>
-      <h3>Stage & Lighting</h3>
-      <p>Beautiful stages and atmospheric lighting arrangements.</p>
-    </div>
 
     <div class="service">
-      <div class="service-number">04</div>
-      <h3>Catering</h3>
-      <p>Hospitality and catering support for memorable occasions.</p>
+
+      <div class="service-number">
+        02
+      </div>
+
+      <h3>
+        Catering
+      </h3>
+
+      <p>
+        Quality hospitality and catering
+        for memorable occasions.
+      </p>
+
     </div>
 
-    <div class="service">
-      <div class="service-number">05</div>
-      <h3>Wedding Events</h3>
-      <p>Complete venue experience for your most important days.</p>
-    </div>
 
     <div class="service">
-      <div class="service-number">06</div>
-      <h3>Corporate Events</h3>
-      <p>Professional spaces for conferences and corporate gatherings.</p>
+
+      <div class="service-number">
+        03
+      </div>
+
+      <h3>
+        Wedding Events
+      </h3>
+
+      <p>
+        A beautiful venue experience
+        for your most important days.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-number">
+        04
+      </div>
+
+      <h3>
+        Corporate Events
+      </h3>
+
+      <p>
+        Professional spaces for corporate
+        gatherings and events.
+      </p>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- EXPERIENCE -->
+
+<!-- =========================
+     15 YEARS EXPERIENCE
+========================= -->
+
 <section class="experience-section">
 
   <div>
 
-    <div class="section-label">15 Years Of Excellence</div>
+    <div class="section-label">
+      15 Years Of Excellence
+    </div>
 
-    <h2>Experience<br>That Matters</h2>
+    <h2>
+      Experience<br>
+      That Matters
+    </h2>
 
     <p>
-      For over 15 years, Grand Marquee has been creating spaces
-      and experiences that turn special occasions into lasting memories.
+      For over 15 years, Grand Marquee Defence
+      has been creating beautiful spaces and
+      unforgettable experiences.
     </p>
 
-    <a href="#contact" class="btn">Talk To Us</a>
+    <a href="#contact" class="btn">
+      Talk To Us
+    </a>
 
   </div>
 
 </section>
 
-<!-- GALLERY -->
+
+<!-- =========================
+     GALLERY
+========================= -->
+
 <section class="gallery" id="gallery">
 
-  <div class="section-label">Our Gallery</div>
+  <div class="section-label">
+    Our Gallery
+  </div>
 
-  <h2 class="section-title">A Glimpse Of<br>Grand Moments</h2>
+  <h2 class="section-title">
+    A Glimpse Of<br>
+    Grand Moments
+  </h2>
 
   <div class="gallery-grid">
 
-    <img src="images/gallery-1.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-2.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-3.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-4.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-5.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-6.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-7.jpg" alt="Grand Marquee Gallery">
-    <img src="images/gallery-8.jpg" alt="Grand Marquee Gallery">
+    <img
+      src="images/gallery-1.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-2.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-3.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-4.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-5.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-6.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-7.jpg"
+      alt="Grand Marquee"
+    >
+
+    <img
+      src="images/gallery-8.jpg"
+      alt="Grand Marquee"
+    >
 
   </div>
 
 </section>
 
-<!-- REVIEWS -->
+
+<!-- =========================
+     CLIENT REVIEWS
+========================= -->
+
 <section class="reviews" id="reviews">
 
-  <div class="section-label">Client Reviews</div>
+  <div class="section-label">
+    Client Reviews
+  </div>
 
-  <h2 class="section-title">What Our<br>Clients Say</h2>
+  <h2 class="section-title">
+    What Our<br>
+    Clients Say
+  </h2>
 
   <div class="review-grid">
 
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      <p>
-        "The venue looked absolutely beautiful. The entire experience
-        was elegant, smooth and memorable."
-      </p>
-      <div class="client">Wedding Client</div>
-    </div>
 
     <div class="review">
-      <div class="stars">★★★★★</div>
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
       <p>
-        "A wonderful place for a special event. The atmosphere,
-        presentation and service were excellent."
+        "The venue looked absolutely beautiful.
+        Everything felt elegant and perfectly arranged.
+        A truly memorable experience."
       </p>
-      <div class="client">Corporate Client</div>
+
+      <div class="client">
+        Wedding Client
+      </div>
+
     </div>
 
+
     <div class="review">
-      <div class="stars">★★★★★</div>
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
       <p>
-        "Everything came together beautifully. Grand Marquee made
-        our celebration truly unforgettable."
+        "A wonderful place for our corporate event.
+        The atmosphere and overall experience
+        were excellent."
       </p>
-      <div class="client">Celebration Client</div>
+
+      <div class="client">
+        Corporate Client
+      </div>
+
+    </div>
+
+
+    <div class="review">
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <p>
+        "Grand Marquee made our celebration
+        beautiful and unforgettable.
+        Highly recommended."
+      </p>
+
+      <div class="client">
+        Celebration Client
+      </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- LOCATION -->
+
+<!-- =========================
+     LOCATION
+========================= -->
+
 <section class="location" id="contact">
 
   <div class="location-image"></div>
 
   <div class="location-content">
 
-    <div class="section-label">Find Us</div>
+    <div class="section-label">
+      Find Us
+    </div>
 
-    <h2>Visit<br>Grand Marquee</h2>
+    <h2>
+      Visit<br>
+      Grand Marquee Defence
+    </h2>
 
     <div class="address">
+
       Main Bedian Road,<br>
-      Near DHA Phase 5,<br>
+      Near DHA Phase 1,<br>
       Lahore, Pakistan
+
     </div>
 
     <div class="contact-buttons">
 
-      <a href="tel:+923000000000" class="btn">
+      <a
+        href="tel:+923000000000"
+        class="btn"
+      >
         Call Us
       </a>
 
-      <a href="https://wa.me/923000000000" class="btn">
+      <a
+        href="https://wa.me/923000000000"
+        class="btn"
+      >
         WhatsApp
       </a>
 
@@ -997,17 +1484,27 @@ footer p{
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-  <div class="footer-logo">GRAND MARQUEE</div>
+  <div class="footer-logo">
+    GRAND MARQUEE DEFENCE
+  </div>
+
+  <div class="footer-sub">
+    EVENTS • WEDDINGS • CELEBRATIONS
+  </div>
 
   <p>
-    EVENTS • WEDDINGS • CORPORATE • CELEBRATIONS
+    Main Bedian Road • Near DHA Phase 1 • Lahore
   </p>
 
   <p>
-    © 2026 Grand Marquee. All Rights Reserved.
+    © 2026 Grand Marquee Defence. All Rights Reserved.
   </p>
 
 </footer>

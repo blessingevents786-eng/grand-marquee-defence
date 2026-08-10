@@ -1,523 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grand Marquee Defence | Lahore</title>
-
-<meta name="description" content="Grand Marquee Defence, Main Bedian Road, Near DHA Phase 5, Lahore. Weddings, receptions, birthdays, university events and corporate celebrations.">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#090909;
-  color:#fff;
-  line-height:1.6;
-}
-
-:root{
-  --gold:#d4af37;
-  --gold-light:#f1d878;
-  --dark:#090909;
-  --dark2:#141414;
-  --gray:#d7d7d7;
-}
-
-/* ================= NAVIGATION ================= */
-
-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:18px 6%;
-
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid rgba(212,175,55,.25);
-}
-
-.logo{
-  color:var(--gold);
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:20px;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
-  transition:.3s;
-}
-
-.nav-links a:hover{
-  color:var(--gold);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  padding:120px 20px 70px;
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(0,0,0,.88),
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.88)
-    ),
-    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2200&q=95")
-    center/cover no-repeat;
-}
-
-.hero-content{
-  max-width:1050px;
-  position:relative;
-  z-index:2;
-}
-
-.hero-small{
-  color:var(--gold);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:5px;
-  margin-bottom:22px;
-}
-
-.hero-line{
-  width:75px;
-  height:1px;
-  background:var(--gold);
-  margin:0 auto 24px;
-  box-shadow:0 0 15px rgba(212,175,55,.6);
-}
-
-.hero h1{
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:clamp(42px,8vw,88px);
-
-  font-weight:500;
-  line-height:.98;
-
-  letter-spacing:7px;
-
-  text-transform:uppercase;
-
-  color:var(--gold-light);
-
-  text-shadow:
-    0 3px 8px rgba(0,0,0,.95),
-    0 0 30px rgba(212,175,55,.25);
-
-  margin:0;
-}
-
-.hero h1 span{
-  display:block;
-  color:#fff;
-  font-size:.78em;
-  letter-spacing:12px;
-  margin-top:8px;
-}
-
-.hero h2{
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:clamp(24px,4vw,42px);
-
-  font-weight:400;
-  font-style:italic;
-
-  letter-spacing:2px;
-
-  margin:0 0 20px;
-}
-
-.hero p{
-  max-width:720px;
-  margin:auto;
-
-  color:#eee;
-
-  font-size:17px;
-  line-height:1.8;
-}
-
-.gold-btn{
-  display:inline-block;
-
-  margin-top:34px;
-
-  padding:15px 38px;
-
-  background:linear-gradient(
-    135deg,
-    #b88a19,
-    #d4af37,
-    #f1d878
-  );
-
-  color:#111;
-
-  text-decoration:none;
-
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:2px;
-
-  border-radius:3px;
-
-  box-shadow:0 8px 25px rgba(0,0,0,.5);
-
-  transition:.3s;
-}
-
-.gold-btn:hover{
-  transform:translateY(-4px);
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-  padding:85px 6%;
-  text-align:center;
-}
-
-.dark{
-  background:var(--dark);
-}
-
-.dark2{
-  background:var(--dark2);
-}
-
-.section-title{
-  color:var(--gold);
-
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:clamp(30px,5vw,45px);
-
-  font-weight:500;
-
-  margin-bottom:18px;
-}
-
-.section-text{
-  max-width:820px;
-  margin:auto;
-
-  color:var(--gray);
-
-  font-size:18px;
-}
-
-/* ================= ABOUT ================= */
-
-.about-box{
-  max-width:1000px;
-
-  margin:45px auto 0;
-
-  padding:45px 30px;
-
-  background:
-    linear-gradient(145deg,#1b1b1b,#101010);
-
-  border:1px solid rgba(212,175,55,.3);
-
-  border-radius:15px;
-}
-
-.experience{
-  color:var(--gold);
-
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:48px;
-  font-weight:bold;
-}
-
-.experience-sub{
-  color:#ccc;
-  font-size:18px;
-  margin-bottom:25px;
-}
-
-/* ================= CARDS ================= */
-
-.cards{
-  max-width:1150px;
-
-  margin:45px auto 0;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-  gap:22px;
-}
-
-.card{
-  background:#181818;
-
-  border:1px solid #292929;
-
-  border-radius:14px;
-
-  padding:32px 22px;
-
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--gold);
-}
-
-.icon{
-  font-size:35px;
-  margin-bottom:13px;
-}
-
-.card h3{
-  color:var(--gold);
-
-  font-family:Georgia,"Times New Roman",serif;
-
-  font-size:22px;
-
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#ccc;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
-  max-width:1150px;
-
-  margin:45px auto 0;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-  gap:18px;
-}
-
-.gallery img{
-  width:100%;
-  height:270px;
-
-  object-fit:cover;
-
-  border-radius:12px;
-
-  border:1px solid #333;
-
-  transition:.4s;
-}
-
-.gallery img:hover{
-  transform:scale(1.02);
-  border-color:var(--gold);
-}
-
-/* ================= FARM HOUSES ================= */
-
-.farm-card{
-  padding:0;
-  overflow:hidden;
-}
-
-.farm-card img{
-  width:100%;
-  height:230px;
-
-  object-fit:cover;
-
-  display:block;
-}
-
-.farm-content{
-  padding:25px 20px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact-box{
-  max-width:850px;
-
-  margin:40px auto 0;
-
-  padding:45px 25px;
-
-  background:#171717;
-
-  border:1px solid rgba(212,175,55,.3);
-
-  border-radius:15px;
-}
-
-.address{
-  color:#eee;
-
-  font-size:19px;
-
-  margin:18px 0;
-}
-
-.address strong{
-  color:var(--gold);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  padding:28px 15px;
-
-  text-align:center;
-
-  background:#050505;
-
-  color:#888;
-
-  border-top:1px solid #222;
-}
-
-footer span{
-  color:var(--gold);
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-  nav{
-    padding:15px 18px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    min-height:92vh;
-    padding:110px 18px 60px;
-  }
-
-  .hero-small{
-    font-size:9px;
-    letter-spacing:3px;
-  }
-
-  .hero h1{
-    font-size:43px;
-    letter-spacing:4px;
-  }
-
-  .hero h1 span{
-    letter-spacing:7px;
-  }
-
-  .hero h2{
-    font-size:25px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  section{
-    padding:65px 18px;
-  }
-
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- ================= NAVIGATION ================= -->
-
-<nav>
-
-  <div class="logo">
-    GRAND MARQUEE
-  </div>
-
-  <div class="nav-links">
-
-    <a href="#about">About</a>
-
-    <a href="#events">Events</a>
-
-    <a href="#gallery">Gallery</a>
-
-    <a href="#farmhouses">Farm Houses</a>
-
-    <a href="#contact">Contact</a>
-
-  </div>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
+<!-- ===== PREMIUM HERO ===== -->
 
 <header class="hero">
 
+  <div class="hero-overlay"></div>
+
   <div class="hero-content">
+
+    <div class="hero-line"></div>
 
     <div class="hero-small">
       WEDDINGS • EVENTS • CELEBRATIONS
     </div>
 
-    <div class="hero-line"></div>
-
     <h1>
-      GRAND MARQUEE
+      GRAND MARQUEE<br>
       <span>DEFENCE</span>
     </h1>
 
@@ -532,7 +28,7 @@ footer span{
       birthdays, university celebrations and corporate events.
     </p>
 
-    <a href="#contact" class="gold-btn">
+    <a href="#contact" class="hero-button">
       CONTACT US
     </a>
 
@@ -541,389 +37,274 @@ footer span{
 </header>
 
 
-<!-- ================= ABOUT ================= -->
+<style>
 
-<section id="about" class="dark">
+/* ===== HERO ===== */
 
-  <h2 class="section-title">
-    Welcome to Grand Marquee Defence
-  </h2>
+.hero {
+  min-height: 100vh;
+  position: relative;
 
-  <p class="section-text">
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    Grand Marquee Defence is a premium destination
-    for celebrations that deserve something special.
-    We provide an elegant and comfortable setting
-    for weddings, family gatherings and memorable events.
+  text-align: center;
 
-  </p>
+  overflow: hidden;
 
+  background-image:
+    url("images/marquee-main.jpg");
 
-  <div class="about-box">
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    <div class="experience">
-      15+ Years
-    </div>
 
-    <div class="experience-sub">
-      Of Experience in Creating Memorable Events
-    </div>
+/* Dark luxury overlay */
 
-    <p class="section-text">
+.hero-overlay {
+  position: absolute;
+  inset: 0;
 
-      With over 15 years of experience in the events industry,
-      we are committed to providing an elegant venue,
-      professional service and a memorable experience
-      for every celebration.
+  background:
+    linear-gradient(
+      120deg,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.42),
+      rgba(0,0,0,0.86)
+    );
 
-    </p>
+  z-index: 1;
+}
 
-  </div>
 
-</section>
+/* Content */
 
+.hero-content {
+  position: relative;
+  z-index: 2;
 
-<!-- ================= FEATURES ================= -->
+  width: 92%;
+  max-width: 1000px;
 
-<section class="dark2">
+  padding: 30px 15px;
+}
 
-  <h2 class="section-title">
-    Why Choose Us
-  </h2>
 
+/* Small heading */
 
-  <div class="cards">
+.hero-small {
+  color: #d4af37;
 
-    <div class="card">
+  font-size: 12px;
+  font-weight: bold;
 
-      <div class="icon">✨</div>
+  letter-spacing: 5px;
 
-      <h3>Elegant Ambience</h3>
+  margin-bottom: 22px;
+}
 
-      <p>
-        A sophisticated atmosphere designed
-        for beautiful celebrations.
-      </p>
 
-    </div>
+/* Gold lines */
 
+.hero-line {
+  width: 75px;
+  height: 1px;
 
-    <div class="card">
+  margin: 0 auto 24px;
 
-      <div class="icon">🏛️</div>
+  background: #d4af37;
 
-      <h3>Spacious Venue</h3>
+  box-shadow:
+    0 0 12px rgba(212,175,55,0.6);
+}
 
-      <p>
-        A comfortable setting for gatherings
-        and special occasions.
-      </p>
 
-    </div>
+/* Main title */
 
+.hero h1 {
 
-    <div class="card">
+  margin: 0;
 
-      <div class="icon">🎉</div>
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-      <h3>Memorable Events</h3>
+  font-size:
+    clamp(43px, 8vw, 92px);
 
-      <p>
-        We help turn your special moments
-        into lasting memories.
-      </p>
+  font-weight: 500;
 
-    </div>
+  line-height: 0.98;
 
+  letter-spacing: 7px;
 
-    <div class="card">
+  text-transform: uppercase;
 
-      <div class="icon">⭐</div>
+  color: #f0d77a;
 
-      <h3>15+ Years Experience</h3>
+  text-shadow:
+    0 3px 8px rgba(0,0,0,0.95),
+    0 0 30px rgba(212,175,55,0.25);
+}
 
-      <p>
-        Experience and dedication behind
-        every successful celebration.
-      </p>
 
-    </div>
+/* Defence */
 
-  </div>
+.hero h1 span {
 
-</section>
+  color: #ffffff;
 
+  font-size: 0.78em;
 
-<!-- ================= EVENTS ================= -->
+  letter-spacing: 12px;
+}
 
-<section id="events" class="dark">
 
-  <h2 class="section-title">
-    Events We Host
-  </h2>
+/* Second gold line */
 
-  <p class="section-text">
+.hero h1 + .hero-line {
 
-    From intimate gatherings to grand celebrations,
-    Grand Marquee Defence is ready for your special occasion.
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
 
-  </p>
 
+/* Tagline */
 
-  <div class="cards">
+.hero h2 {
 
+  margin: 0 0 20px;
 
-    <div class="card">
+  color: #ffffff;
 
-      <div class="icon">💍</div>
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-      <h3>Weddings</h3>
+  font-size:
+    clamp(24px, 4vw, 42px);
 
-      <p>
-        Celebrate your special day
-        in an elegant setting.
-      </p>
+  font-weight: 400;
 
-    </div>
+  font-style: italic;
 
+  letter-spacing: 2px;
+}
 
-    <div class="card">
 
-      <div class="icon">🥂</div>
+/* Description */
 
-      <h3>Receptions</h3>
+.hero p {
 
-      <p>
-        Beautiful celebrations with
-        family and friends.
-      </p>
+  max-width: 720px;
 
-    </div>
+  margin: 0 auto;
 
+  color: #eeeeee;
 
-    <div class="card">
+  font-size: 17px;
 
-      <div class="icon">🎂</div>
+  line-height: 1.8;
 
-      <h3>Birthdays</h3>
+  letter-spacing: 0.4px;
+}
 
-      <p>
-        Make every birthday
-        celebration memorable.
-      </p>
 
-    </div>
+/* Button */
 
+.hero-button {
 
-    <div class="card">
+  display: inline-block;
 
-      <div class="icon">🎓</div>
+  margin-top: 34px;
 
-      <h3>University & Graduation</h3>
+  padding: 15px 38px;
 
-      <p>
-        Ideal for university functions,
-        graduations and student events.
-      </p>
+  color: #111;
 
-    </div>
+  background:
+    linear-gradient(
+      135deg,
+      #b88a19,
+      #d4af37,
+      #f1d878
+    );
 
+  text-decoration: none;
 
-    <div class="card">
+  font-size: 13px;
 
-      <div class="icon">💼</div>
+  font-weight: bold;
 
-      <h3>Corporate Events</h3>
+  letter-spacing: 2px;
 
-      <p>
-        A professional venue for
-        corporate gatherings and events.
-      </p>
+  border-radius: 3px;
 
-    </div>
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.5);
 
-  </div>
+  transition: 0.3s ease;
+}
 
-</section>
 
+.hero-button:hover {
 
-<!-- ================= GALLERY ================= -->
+  transform: translateY(-4px);
 
-<section id="gallery" class="dark2">
+  box-shadow:
+    0 12px 35px rgba(212,175,55,0.35);
+}
 
-  <h2 class="section-title">
-    Our Gallery
-  </h2>
 
-  <p class="section-text">
+/* ===== MOBILE ===== */
 
-    A glimpse of the elegance and atmosphere
-    at Grand Marquee Defence.
+@media (max-width: 700px) {
 
-  </p>
+  .hero {
 
+    min-height: 92vh;
 
-  <div class="gallery">
+    background-position: center;
+  }
 
-    <img
-      src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=90"
-      alt="Grand Marquee Event"
-    >
+  .hero-small {
 
-    <img
-      src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=90"
-      alt="Wedding Celebration"
-    >
+    font-size: 9px;
 
-    <img
-      src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=90"
-      alt="Wedding Venue"
-    >
+    letter-spacing: 3px;
 
-  </div>
+    margin-bottom: 18px;
+  }
 
-</section>
+  .hero h1 {
 
+    font-size: 43px;
 
-<!-- ================= FARM HOUSES ================= -->
+    letter-spacing: 4px;
+  }
 
-<section id="farmhouses" class="dark">
+  .hero h1 span {
 
-  <h2 class="section-title">
-    Farm Houses
-  </h2>
+    letter-spacing: 7px;
+  }
 
-  <p class="section-text">
+  .hero h2 {
 
-    Explore our available farm houses
-    for private gatherings, celebrations
-    and special occasions.
+    font-size: 25px;
+  }
 
-  </p>
+  .hero p {
 
+    font-size: 15px;
 
-  <div class="cards">
+    line-height: 1.7;
+  }
 
+}
 
-    <div class="card farm-card">
-
-      <img
-        src="images/farmhouses/farmhouse-1.jpg"
-        alt="Farm House 1"
-      >
-
-      <div class="farm-content">
-
-        <h3>Farm House 1</h3>
-
-        <p>
-          Beautiful and spacious farm house
-          available for your special occasion.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="card farm-card">
-
-      <img
-        src="images/farmhouses/farmhouse-2.jpg"
-        alt="Farm House 2"
-      >
-
-      <div class="farm-content">
-
-        <h3>Farm House 2</h3>
-
-        <p>
-          A comfortable location for
-          private gatherings and celebrations.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="card farm-card">
-
-      <img
-        src="images/farmhouses/farmhouse-3.jpg"
-        alt="Farm House 3"
-      >
-
-      <div class="farm-content">
-
-        <h3>Farm House 3</h3>
-
-        <p>
-          More farm house information
-          can be added when available.
-        </p>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="dark2">
-
-  <h2 class="section-title">
-    Contact Us
-  </h2>
-
-
-  <div class="contact-box">
-
-    <p class="address">
-      📍
-      <strong>
-        Main Bedian Road, Near DHA Phase 5, Lahore
-      </strong>
-    </p>
-
-
-    <p class="section-text">
-
-      Planning your next celebration?
-      Get in touch with Grand Marquee Defence
-      and make your event memorable.
-
-    </p>
-
-
-    <a
-      href="https://wa.me/"
-      target="_blank"
-      class="gold-btn"
-    >
-      CONTACT US ON WHATSAPP
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-  © 2026
-  <span>Grand Marquee Defence</span>.
-  All Rights Reserved.
-
-</footer>
-
-
-</body>
-</html>
+</style>

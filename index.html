@@ -3,84 +3,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grand Marquee Defence | Indoor & Outdoor Events</title>
-  <meta name="description" content="Grand Marquee Defence – Premium indoor and outdoor event venue in Lahore.">
+
+  <title>Grand Marquee Defence | Wedding & Events</title>
+
+  <meta name="description" content="Grand Marquee Defence, Main Bedian Road Lahore. A premium wedding and event marquee with space for up to 650 guests.">
+
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,sans-serif;background:#111;color:#fff;line-height:1.6}
-    header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(#0008,#0009),url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=80') center/cover}
-    .hero{max-width:850px}
-    .hero h1{font-size:clamp(42px,7vw,80px);letter-spacing:2px;margin-bottom:15px}
-    .hero p{font-size:22px;margin-bottom:30px}
-    .btn{display:inline-block;padding:14px 28px;margin:6px;border-radius:30px;text-decoration:none;font-weight:bold}
-    .gold{background:#d4af37;color:#111}
-    .outline{border:1px solid #fff;color:#fff}
-    section{padding:75px 7%;text-align:center}
-    h2{font-size:38px;margin-bottom:18px;color:#d4af37}
-    .intro{max-width:800px;margin:auto;color:#ddd}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:40px}
-    .card{background:#1c1c1c;padding:30px;border-radius:14px}
-    .card h3{color:#d4af37;margin-bottom:10px}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px;margin-top:35px}
-    .gallery img{width:100%;height:230px;object-fit:cover;border-radius:12px}
-    .contact{background:#191919}
-    footer{padding:25px;text-align:center;background:#080808;color:#aaa}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      color: #d4af37;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 38px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .dark {
+      background: #111;
+    }
+
+    .light {
+      background: #181818;
+    }
+
+    h2.section-title {
+      color: #d4af37;
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: auto;
+      color: #ddd;
+      font-size: 18px;
+    }
+
+    .cards {
+      max-width: 1100px;
+      margin: 45px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #222;
+      padding: 35px 20px;
+      border-radius: 12px;
+      border: 1px solid #333;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    .contact {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact p {
+      margin: 12px 0;
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #080808;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .gold {
+      color: #d4af37;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 55px 18px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      h2.section-title {
+        font-size: 30px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="hero">
-    <h1>Grand Marquee Defence</h1>
-    <p>Premium Indoor & Outdoor Events in Lahore</p>
-    <a class="btn gold" href="#contact">Book Your Event</a>
-    <a class="btn outline" href="tel:+923000000000">Call Now</a>
-  </div>
-</header>
+  <header>
+    <div class="hero">
+      <h1>Grand Marquee Defence</h1>
+      <h2>Make Your Event Memorable</h2>
 
-<section>
-  <h2>Make Your Event Memorable</h2>
-  <p class="intro">
-    Grand Marquee Defence offers a beautiful and elegant venue for weddings,
-    receptions, corporate events and special celebrations.
-  </p>
+      <p>
+        A premium destination for weddings, receptions,
+        corporate events and unforgettable celebrations.
+        Spacious seating for up to <strong>650 guests</strong>.
+      </p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Indoor Events</h3>
-      <p>Elegant indoor arrangements for weddings and special occasions.</p>
+      <a class="btn" href="#contact">Book Your Event</a>
     </div>
-    <div class="card">
-      <h3>Outdoor Events</h3>
-      <p>Beautiful outdoor setups for memorable celebrations and gatherings.</p>
+  </header>
+
+  <section class="dark">
+    <h2 class="section-title">Welcome to Grand Marquee Defence</h2>
+
+    <p class="intro">
+      Celebrate your special moments in elegance and style.
+      Grand Marquee Defence offers a beautiful and comfortable
+      venue designed to make your function truly memorable.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>650 Guests</h3>
+        <p>
+          Spacious arrangements with capacity for approximately
+          650 guests.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Elegant Venue</h3>
+        <p>
+          A sophisticated atmosphere for weddings and special events.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Perfect Events</h3>
+        <p>
+          Ideal for weddings, receptions, parties and corporate functions.
+        </p>
+      </div>
+
     </div>
-    <div class="card">
-      <h3>650+ Guests</h3>
-      <p>Spacious venue with capacity for approximately 650 guests.</p>
+  </section>
+
+  <section class="light">
+    <h2 class="section-title">Our Events</h2>
+
+    <p class="intro">
+      From intimate celebrations to grand wedding functions,
+      our venue is designed to give your guests an unforgettable experience.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Weddings</h3>
+        <p>Celebrate your big day in a beautiful setting.</p>
+      </div>
+
+      <div class="card">
+        <h3>Receptions</h3>
+        <p>Create beautiful memories with your family and friends.</p>
+      </div>
+
+      <div class="card">
+        <h3>Corporate Events</h3>
+        <p>A professional and spacious venue for your important events.</p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Our Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=80">
-    <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80">
-    <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1000&q=80">
-  </div>
-</section>
+  <section id="contact" class="dark">
+    <div class="contact">
 
-<section class="contact" id="contact">
-  <h2>Book Your Event</h2>
-  <p class="intro">Contact Grand Marquee Defence today and plan your memorable event.</p>
-  <br>
-  <a class="btn gold" href="https://wa.me/923000000000">WhatsApp Us</a>
-  <a class="btn outline" href="tel:+923000000000">Call Us</a>
-</section>
+      <h2 class="section-title">Book Your Event</h2>
 
-<footer>
-  © 2026 Grand Marquee Defence · Indoor & Outdoor Event Services · Lahore
-</footer>
+      <p>
+        Make your event memorable at
+        <strong class="gold">Grand Marquee Defence</strong>.
+      </p>
+
+      <p>
+        📍 Main Bedian Road, Lahore
+      </p>
+
+      <p>
+        Get in touch with us to discuss your event and availability.
+      </p>
+
+      <a class="btn" href="https://wa.me/" target="_blank">
+        Contact Us on WhatsApp
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Grand Marquee Defence. All Rights Reserved.
+  </footer>
 
 </body>
 </html>

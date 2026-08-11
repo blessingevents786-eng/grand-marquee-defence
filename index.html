@@ -1,234 +1,56 @@
-.hero{
-    position:relative;
-    min-height:100vh;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#080706;
-}
-
-.hero-bg{
-    position:absolute;
-    inset:0;
-    background:url("images/marquee-bg.jpg") center center/cover no-repeat;
-    transform:scale(1.02);
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.72),
-            rgba(0,0,0,.28),
-            rgba(0,0,0,.68)
-        ),
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.18) 45%,
-            rgba(0,0,0,.82)
-        );
-}
-
-.hero-nav{
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    z-index:5;
+<header class="hero" id="home">
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
 
-    padding:25px 6%;
-}
+    <nav class="hero-nav">
 
-.brand img{
-    width:170px;
-    height:auto;
-    display:block;
-}
+        <a href="#home" class="brand">
+            <img src="images/logo.png" alt="Grand Marquee Defence">
+        </a>
 
-.hero-links{
-    display:flex;
-    gap:35px;
-}
+        <div class="hero-links">
+            <a href="#about">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact Us</a>
+        </div>
 
-.hero-links a{
-    color:#eee8dc;
-    font-size:10px;
-    font-weight:500;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    transition:.3s;
-}
+    </nav>
 
-.hero-links a:hover{
-    color:#d9b66c;
-}
+    <div class="hero-content">
 
-.hero-content{
-    position:relative;
-    z-index:3;
+        <p class="hero-kicker">
+            GRAND MARQUEE DEFENCE
+        </p>
 
-    width:min(850px,90%);
+        <h1>
+            Grand Marquee
+            <span>Defence</span>
+        </h1>
 
-    margin-top:80px;
+        <p class="hero-description">
+            Where celebrations become timeless memories.
+            A premier wedding and events venue offering
+            elegant halls, exquisite catering, and flawless
+            service for your most precious moments.
+        </p>
 
-    text-align:center;
-}
+        <div class="hero-buttons">
 
-.hero-kicker{
-    margin-bottom:20px;
+            <a href="https://wa.me/923234333310" class="hero-btn hero-btn-gold" target="_blank">
+                WhatsApp
+            </a>
 
-    color:#d9b66c;
+            <a href="tel:+923234333310" class="hero-btn">
+                Call Us
+            </a>
 
-    font-size:10px;
-    font-weight:600;
+        </div>
 
-    letter-spacing:6px;
-}
+        <p class="hero-location">
+            Main Bedian Road · Near DHA Phase 1 · Lahore
+        </p>
 
-.hero h1{
-    margin:0;
+    </div>
 
-    color:#f5f0e7;
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:clamp(58px,9vw,105px);
-
-    font-weight:500;
-
-    line-height:.88;
-
-    text-shadow:0 4px 30px rgba(0,0,0,.65);
-}
-
-.hero h1 span{
-    display:block;
-    color:#e0bf76;
-}
-
-.hero-description{
-    max-width:650px;
-
-    margin:30px auto 0;
-
-    color:#eee8dd;
-
-    font-size:14px;
-
-    line-height:1.9;
-
-    text-shadow:0 2px 10px rgba(0,0,0,.8);
-}
-
-.hero-buttons{
-    display:flex;
-
-    justify-content:center;
-
-    gap:14px;
-
-    margin-top:32px;
-}
-
-.hero-btn{
-    min-width:150px;
-
-    padding:14px 25px;
-
-    border:1px solid rgba(222,188,111,.75);
-
-    color:#f5ead4;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    backdrop-filter:blur(5px);
-
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    background:#d9b66c;
-    color:#111;
-}
-
-.hero-btn-gold{
-    background:#d9b66c;
-    color:#111;
-}
-
-.hero-location{
-    margin-top:25px;
-
-    color:#ddd3c2;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-}
-
-
-@media(max-width:700px){
-
-    .hero{
-        min-height:100svh;
-    }
-
-    .hero-nav{
-        padding:18px 5%;
-    }
-
-    .brand img{
-        width:125px;
-    }
-
-    .hero-links{
-        display:none;
-    }
-
-    .hero-content{
-        margin-top:70px;
-    }
-
-    .hero-kicker{
-        font-size:8px;
-        letter-spacing:4px;
-    }
-
-    .hero h1{
-        font-size:58px;
-    }
-
-    .hero-description{
-        font-size:12px;
-        line-height:1.8;
-        max-width:360px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .hero-btn{
-        width:220px;
-    }
-
-    .hero-location{
-        font-size:9px;
-        line-height:1.7;
-    }
-}
+</header>

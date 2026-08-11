@@ -1,56 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grand Marquee Defence | Lahore</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#090807;
+  color:#fff;
+}
+
+a{text-decoration:none;color:inherit}
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:10;
+  height:82px;
+  padding:12px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
+}
+
+.logo{
+  width:145px;
+  height:auto;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  font-size:13px;
+  font-weight:500;
+  color:#fff;
+}
+
+.call-top{
+  background:#d7ae5b;
+  color:#17120a;
+  padding:12px 22px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  background:
+    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.72)),
+    url("images/marquee-bg.jpg") center center/cover no-repeat;
+}
+
+.hero-content{
+  width:90%;
+  max-width:850px;
+  padding-top:70px;
+}
+
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(48px,8vw,92px);
+  font-weight:500;
+  line-height:.95;
+  text-shadow:0 4px 25px #000;
+}
+
+.hero h1 span{
+  display:block;
+  color:#e8c778;
+}
+
+.hero p{
+  max-width:650px;
+  margin:28px auto 0;
+  font-size:16px;
+  line-height:1.8;
+  color:#eee;
+}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.btn{
+  padding:14px 27px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  border:1px solid #d7ae5b;
+}
+
+.whatsapp{
+  background:#d7ae5b;
+  color:#15110a;
+}
+
+.phone{
+  background:rgba(0,0,0,.35);
+  color:#fff;
+}
+
+.location{
+  margin-top:22px;
+  font-size:13px;
+  color:#e8d8b0;
+}
+
+section{
+  padding:90px 7%;
+}
+
+.dark{
+  background:#11100e;
+}
+
+.title{
+  text-align:center;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:50px;
+  color:#e8c778;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 45px;
+  color:#aaa;
+  line-height:1.8;
+}
+
+.about{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.about-text h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.about-text p{
+  color:#aaa;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+.gallery{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-auto-rows:250px;
+  gap:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.gallery .big{
+  grid-row:span 2;
+}
+
+.contact{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact-box{
+  border:1px solid rgba(215,174,91,.35);
+  padding:25px;
+  border-radius:10px;
+  background:#11100e;
+  margin-bottom:14px;
+}
+
+.contact-box h3{
+  color:#e8c778;
+  margin-bottom:8px;
+}
+
+.contact-box p{
+  color:#aaa;
+  line-height:1.6;
+}
+
+.map{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  border:0;
+  border-radius:10px;
+}
+
+footer{
+  text-align:center;
+  padding:45px 20px;
+  background:#050504;
+  border-top:1px solid rgba(215,174,91,.25);
+}
+
+.footer-logo{
+  width:150px;
+  margin:auto;
+}
+
+footer p{
+  margin-top:15px;
+  color:#777;
+  font-size:12px;
+}
+
+.float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:20;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  box-shadow:0 5px 20px #000;
+}
+
+.float-wa{
+  background:#25D366;
+}
+
+.float-call{
+  background:#d7ae5b;
+  color:#111;
+}
+
+@media(max-width:800px){
+
+  nav{
+    height:70px;
+    padding:10px 5%;
+  }
+
+  .logo{
+    width:115px;
+  }
+
+  .nav-links,
+  .call-top{
+    display:none;
+  }
+
+  .hero{
+    background-position:center;
+  }
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    width:220px;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  .title{
+    font-size:40px;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .about img{
+    height:400px;
+  }
+
+  .about-text h2{
+    font-size:40px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:190px;
+  }
+
+  .gallery .big{
+    grid-row:span 2;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .map{
+    min-height:350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">
+    <img src="images/logo.png" class="logo" alt="Grand Marquee Defence">
+  </a>
+
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+  <a class="call-top" href="tel:+923234333310">Call Now</a>
+</nav>
+
 <header class="hero" id="home">
+  <div class="hero-content">
 
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
+    <h1>
+      Grand Marquee
+      <span>Defence</span>
+    </h1>
 
-    <nav class="hero-nav">
+    <p>
+      Where celebrations become timeless memories.
+      A beautiful destination for weddings, mehndis,
+      walimas and unforgettable events.
+    </p>
 
-        <a href="#home" class="brand">
-            <img src="images/logo.png" alt="Grand Marquee Defence">
-        </a>
+    <div class="buttons">
+      <a class="btn whatsapp"
+         href="https://wa.me/923234333310"
+         target="_blank">
+        WhatsApp
+      </a>
 
-        <div class="hero-links">
-            <a href="#about">About Us</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact Us</a>
-        </div>
+      <a class="btn phone"
+         href="tel:+923234333310">
+        +92 323 4333310
+      </a>
+    </div>
 
-    </nav>
+    <div class="location">
+      Main Bedian Road, Near DHA Phase 5, Lahore
+    </div>
 
-    <div class="hero-content">
+  </div>
+</header>
 
-        <p class="hero-kicker">
-            GRAND MARQUEE DEFENCE
-        </p>
+<section class="dark" id="about">
 
-        <h1>
-            Grand Marquee
-            <span>Defence</span>
-        </h1>
+  <h2 class="title">About Us</h2>
 
-        <p class="hero-description">
-            Where celebrations become timeless memories.
-            A premier wedding and events venue offering
-            elegant halls, exquisite catering, and flawless
-            service for your most precious moments.
-        </p>
+  <p class="subtitle">
+    A beautiful venue created for memorable celebrations,
+    elegant weddings and special occasions.
+  </p>
 
-        <div class="hero-buttons">
+  <div class="about">
 
-            <a href="https://wa.me/923234333310" class="hero-btn hero-btn-gold" target="_blank">
-                WhatsApp
-            </a>
+    <img src="images/gallery-stage.png"
+         alt="Grand Marquee Defence wedding stage">
 
-            <a href="tel:+923234333310" class="hero-btn">
-                Call Us
-            </a>
+    <div class="about-text">
 
-        </div>
+      <h2>Celebrate Your Special Moments</h2>
 
-        <p class="hero-location">
-            Main Bedian Road · Near DHA Phase 1 · Lahore
-        </p>
+      <p>
+        Grand Marquee Defence offers an elegant and comfortable
+        setting for weddings, mehndis, walimas and events.
+      </p>
+
+      <p>
+        From beautiful décor and lighting to comfortable seating
+        and quality catering, every detail is designed to make
+        your celebration memorable.
+      </p>
 
     </div>
 
-</header>
+  </div>
+
+</section>
+
+<section id="gallery">
+
+  <h2 class="title">Gallery</h2>
+
+  <p class="subtitle">
+    Take a look at the beautiful atmosphere and décor
+    created for our events.
+  </p>
+
+  <div class="gallery">
+
+    <div class="big">
+      <img src="images/marquee-bg.jpg"
+           alt="Grand Marquee Defence">
+    </div>
+
+    <div>
+      <img src="images/gallery-stage.png"
+           alt="Wedding stage">
+    </div>
+
+    <div>
+      <img src="images/gallery-dining.png"
+           alt="Dining setup">
+    </div>
+
+    <div>
+      <img src="images/gallery-lighting.png"
+           alt="Wedding lighting">
+    </div>
+
+    <div>
+      <img src="images/gallery-exterior.png"
+           alt="Marquee exterior">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="dark" id="contact">
+
+  <h2 class="title">Get In Touch</h2>
+
+  <p class="subtitle">
+    Contact us for availability, bookings and venue details.
+  </p>
+
+  <div class="contact">
+
+    <div>
+
+      <div class="contact-box">
+        <h3>Call Us</h3>
+        <p>+92 323 4333310</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>WhatsApp</h3>
+        <p>Chat with us instantly</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Location</h3>
+        <p>
+          Main Bedian Road, Near DHA Phase 5, Lahore, Pakistan
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Timings</h3>
+        <p>Open daily · 10:00 AM – 11:00 PM</p>
+      </div>
+
+    </div>
+
+    <iframe
+      class="map"
+      title="Grand Marquee Defence Location"
+      src="https://www.google.com/maps?q=Main%20Bedian%20Road%20Near%20DHA%20Phase%205%20Lahore%20Pakistan&output=embed"
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <img src="images/logo.png"
+       class="footer-logo"
+       alt="Grand Marquee Defence">
+
+  <p>
+    Main Bedian Road · Near DHA Phase 5 · Lahore
+  </p>
+
+  <p>
+    © 2026 Grand Marquee Defence. All rights reserved.
+  </p>
+
+</footer>
+
+<div class="float">
+
+  <a class="float-wa"
+     href="https://wa.me/923234333310"
+     target="_blank"
+     aria-label="WhatsApp">
+    W
+  </a>
+
+  <a class="float-call"
+     href="tel:+923234333310"
+     aria-label="Call">
+    ☎
+  </a>
+
+</div>
+
+</body>
+</html>

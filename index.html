@@ -7,127 +7,135 @@
 <title>Grand Marquee Defence | Lahore</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#090807;
+  background:#0b0907;
   color:#fff;
 }
 
-a{text-decoration:none;color:inherit}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
+/* NAVIGATION */
 nav{
-  position:fixed;
+  position:absolute;
   top:0;
   left:0;
-  right:0;
+  width:100%;
   z-index:10;
-  height:82px;
-  padding:12px 5%;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
+  justify-content:center;
+  gap:45px;
+  padding:25px 6%;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.75),
+    transparent
+  );
 }
 
-.logo{
-  width:145px;
-  height:auto;
+nav a{
+  font-size:14px;
+  font-weight:600;
 }
 
-.nav-links{
-  display:flex;
-  gap:35px;
+nav a:hover{
+  color:#e4bd68;
 }
 
-.nav-links a{
-  font-size:13px;
-  font-weight:500;
-  color:#fff;
-}
-
-.call-top{
-  background:#d7ae5b;
-  color:#17120a;
-  padding:12px 22px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:bold;
-}
-
+/* HERO */
 .hero{
   min-height:100vh;
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  position:relative;
-  background:
-    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.72)),
-    url("images/marquee-bg.jpg") center center/cover no-repeat;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,.42),
+      rgba(0,0,0,.68)
+    ),
+    url("grand.jpeg");
+
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 
 .hero-content{
   width:90%;
-  max-width:850px;
-  padding-top:70px;
+  max-width:900px;
+  padding-top:60px;
 }
 
 .hero h1{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(48px,8vw,92px);
+  font-size:clamp(52px,8vw,96px);
   font-weight:500;
   line-height:.95;
-  text-shadow:0 4px 25px #000;
+  text-shadow:0 5px 30px #000;
 }
 
 .hero h1 span{
   display:block;
-  color:#e8c778;
+  color:#e6c36f;
 }
 
 .hero p{
-  max-width:650px;
-  margin:28px auto 0;
+  max-width:680px;
+  margin:30px auto 0;
   font-size:16px;
   line-height:1.8;
-  color:#eee;
+  color:#f1f1f1;
 }
 
 .buttons{
-  margin-top:30px;
   display:flex;
   justify-content:center;
   gap:15px;
+  margin-top:32px;
 }
 
-.btn{
-  padding:14px 27px;
+.button{
+  padding:15px 28px;
   border-radius:30px;
-  font-size:13px;
+  font-size:14px;
   font-weight:bold;
-  border:1px solid #d7ae5b;
+  border:1px solid #dfb960;
 }
 
 .whatsapp{
-  background:#d7ae5b;
-  color:#15110a;
+  background:#dfb960;
+  color:#15110b;
 }
 
-.phone{
-  background:rgba(0,0,0,.35);
+.call{
+  background:rgba(0,0,0,.4);
   color:#fff;
 }
 
 .location{
   margin-top:22px;
+  color:#ead59f;
   font-size:13px;
-  color:#e8d8b0;
 }
 
+/* SECTIONS */
 section{
   padding:90px 7%;
 }
@@ -139,19 +147,20 @@ section{
 .title{
   text-align:center;
   font-family:Georgia,"Times New Roman",serif;
-  font-size:50px;
-  color:#e8c778;
-  margin-bottom:20px;
+  font-size:48px;
+  color:#e6c36f;
+  margin-bottom:18px;
 }
 
 .subtitle{
-  text-align:center;
   max-width:700px;
   margin:0 auto 45px;
+  text-align:center;
   color:#aaa;
   line-height:1.8;
 }
 
+/* ABOUT */
 .about{
   max-width:1100px;
   margin:auto;
@@ -161,17 +170,17 @@ section{
   align-items:center;
 }
 
-.about img{
+.about-image{
   width:100%;
-  height:520px;
+  height:500px;
   object-fit:cover;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 .about-text h2{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:45px;
-  margin-bottom:20px;
+  font-size:43px;
+  margin-bottom:22px;
 }
 
 .about-text p{
@@ -180,44 +189,46 @@ section{
   margin-bottom:18px;
 }
 
+/* GALLERY */
 .gallery{
   max-width:1150px;
   margin:auto;
   display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  grid-auto-rows:250px;
-  gap:12px;
+  grid-template-columns:2fr 1fr;
+  gap:14px;
 }
 
 .gallery img{
   width:100%;
-  height:100%;
+  height:280px;
   object-fit:cover;
-  border-radius:8px;
+  border-radius:9px;
 }
 
-.gallery .big{
+.gallery .large{
+  height:574px;
   grid-row:span 2;
 }
 
+/* CONTACT */
 .contact{
   max-width:1100px;
   margin:auto;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px;
+  gap:35px;
 }
 
 .contact-box{
-  border:1px solid rgba(215,174,91,.35);
-  padding:25px;
-  border-radius:10px;
-  background:#11100e;
+  padding:22px;
   margin-bottom:14px;
+  border:1px solid rgba(220,185,100,.35);
+  border-radius:10px;
+  background:#151310;
 }
 
 .contact-box h3{
-  color:#e8c778;
+  color:#e6c36f;
   margin-bottom:8px;
 }
 
@@ -234,24 +245,27 @@ section{
   border-radius:10px;
 }
 
+/* FOOTER */
 footer{
-  text-align:center;
   padding:45px 20px;
+  text-align:center;
   background:#050504;
-  border-top:1px solid rgba(215,174,91,.25);
+  border-top:1px solid rgba(220,185,100,.25);
 }
 
-.footer-logo{
-  width:150px;
-  margin:auto;
+footer h3{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#e6c36f;
+  font-size:25px;
 }
 
 footer p{
-  margin-top:15px;
+  margin-top:12px;
   color:#777;
-  font-size:12px;
+  font-size:13px;
 }
 
+/* FLOATING BUTTONS */
 .float{
   position:fixed;
   right:20px;
@@ -263,47 +277,40 @@ footer p{
 }
 
 .float a{
-  width:54px;
-  height:54px;
+  width:55px;
+  height:55px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:23px;
-  box-shadow:0 5px 20px #000;
+  font-weight:bold;
+  box-shadow:0 5px 20px rgba(0,0,0,.5);
 }
 
 .float-wa{
   background:#25D366;
+  color:white;
 }
 
 .float-call{
-  background:#d7ae5b;
+  background:#dfb960;
   color:#111;
 }
 
+/* MOBILE */
 @media(max-width:800px){
 
   nav{
-    height:70px;
-    padding:10px 5%;
+    gap:18px;
+    padding:20px 4%;
   }
 
-  .logo{
-    width:115px;
-  }
-
-  .nav-links,
-  .call-top{
-    display:none;
-  }
-
-  .hero{
-    background-position:center;
+  nav a{
+    font-size:11px;
   }
 
   .hero h1{
-    font-size:55px;
+    font-size:54px;
   }
 
   .hero p{
@@ -315,7 +322,7 @@ footer p{
     align-items:center;
   }
 
-  .btn{
+  .button{
     width:220px;
   }
 
@@ -329,24 +336,24 @@ footer p{
 
   .about{
     grid-template-columns:1fr;
-    gap:35px;
   }
 
-  .about img{
+  .about-image{
     height:400px;
   }
 
   .about-text h2{
-    font-size:40px;
+    font-size:38px;
   }
 
   .gallery{
-    grid-template-columns:1fr 1fr;
-    grid-auto-rows:190px;
+    grid-template-columns:1fr;
   }
 
-  .gallery .big{
-    grid-row:span 2;
+  .gallery img,
+  .gallery .large{
+    height:300px;
+    grid-row:auto;
   }
 
   .contact{
@@ -362,22 +369,18 @@ footer p{
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-  <a href="#home">
-    <img src="images/logo.png" class="logo" alt="Grand Marquee Defence">
-  </a>
-
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact Us</a>
-  </div>
-
-  <a class="call-top" href="tel:+923234333310">Call Now</a>
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact Us</a>
 </nav>
 
+
+<!-- HERO -->
 <header class="hero" id="home">
+
   <div class="hero-content">
 
     <h1>
@@ -392,16 +395,20 @@ footer p{
     </p>
 
     <div class="buttons">
-      <a class="btn whatsapp"
-         href="https://wa.me/923234333310"
-         target="_blank">
+
+      <a
+        class="button whatsapp"
+        href="https://wa.me/923234333310"
+        target="_blank">
         WhatsApp
       </a>
 
-      <a class="btn phone"
-         href="tel:+923234333310">
+      <a
+        class="button call"
+        href="tel:+923234333310">
         +92 323 4333310
       </a>
+
     </div>
 
     <div class="location">
@@ -409,8 +416,11 @@ footer p{
     </div>
 
   </div>
+
 </header>
 
+
+<!-- ABOUT -->
 <section class="dark" id="about">
 
   <h2 class="title">About Us</h2>
@@ -422,22 +432,27 @@ footer p{
 
   <div class="about">
 
-    <img src="images/gallery-stage.png"
-         alt="Grand Marquee Defence wedding stage">
+    <img
+      class="about-image"
+      src="grand.jpeg"
+      alt="Grand Marquee Defence">
 
     <div class="about-text">
 
-      <h2>Celebrate Your Special Moments</h2>
+      <h2>
+        Lahore's destination
+        for grand celebrations
+      </h2>
 
       <p>
-        Grand Marquee Defence offers an elegant and comfortable
-        setting for weddings, mehndis, walimas and events.
+        Grand Marquee Defence is a beautiful venue
+        for weddings, mehndis, walimas and special events.
       </p>
 
       <p>
-        From beautiful décor and lighting to comfortable seating
-        and quality catering, every detail is designed to make
-        your celebration memorable.
+        Elegant décor, beautiful lighting, comfortable
+        seating and a memorable atmosphere come together
+        to make your celebration truly special.
       </p>
 
     </div>
@@ -446,49 +461,45 @@ footer p{
 
 </section>
 
+
+<!-- GALLERY -->
 <section id="gallery">
 
-  <h2 class="title">Gallery</h2>
+  <h2 class="title">
+    Gallery
+  </h2>
 
   <p class="subtitle">
-    Take a look at the beautiful atmosphere and décor
-    created for our events.
+    A glimpse of the beautiful atmosphere
+    we create for your special moments.
   </p>
 
   <div class="gallery">
 
-    <div class="big">
-      <img src="images/marquee-bg.jpg"
-           alt="Grand Marquee Defence">
-    </div>
+    <img
+      class="large"
+      src="grand.jpeg"
+      alt="Grand Marquee Defence">
 
-    <div>
-      <img src="images/gallery-stage.png"
-           alt="Wedding stage">
-    </div>
+    <img
+      src="grand.jpeg"
+      alt="Grand Marquee wedding">
 
-    <div>
-      <img src="images/gallery-dining.png"
-           alt="Dining setup">
-    </div>
-
-    <div>
-      <img src="images/gallery-lighting.png"
-           alt="Wedding lighting">
-    </div>
-
-    <div>
-      <img src="images/gallery-exterior.png"
-           alt="Marquee exterior">
-    </div>
+    <img
+      src="grand.jpeg"
+      alt="Grand Marquee decoration">
 
   </div>
 
 </section>
 
+
+<!-- CONTACT -->
 <section class="dark" id="contact">
 
-  <h2 class="title">Get In Touch</h2>
+  <h2 class="title">
+    Get In Touch
+  </h2>
 
   <p class="subtitle">
     Contact us for availability, bookings and venue details.
@@ -511,16 +522,20 @@ footer p{
       <div class="contact-box">
         <h3>Location</h3>
         <p>
-          Main Bedian Road, Near DHA Phase 5, Lahore, Pakistan
+          Main Bedian Road, Near DHA Phase 5,
+          Lahore, Pakistan
         </p>
       </div>
 
       <div class="contact-box">
         <h3>Timings</h3>
-        <p>Open daily · 10:00 AM – 11:00 PM</p>
+        <p>
+          Open daily · 10:00 AM – 11:00 PM
+        </p>
       </div>
 
     </div>
+
 
     <iframe
       class="map"
@@ -533,11 +548,13 @@ footer p{
 
 </section>
 
+
+<!-- FOOTER -->
 <footer>
 
-  <img src="images/logo.png"
-       class="footer-logo"
-       alt="Grand Marquee Defence">
+  <h3>
+    Grand Marquee Defence
+  </h3>
 
   <p>
     Main Bedian Road · Near DHA Phase 5 · Lahore
@@ -549,18 +566,22 @@ footer p{
 
 </footer>
 
+
+<!-- FLOATING BUTTONS -->
 <div class="float">
 
-  <a class="float-wa"
-     href="https://wa.me/923234333310"
-     target="_blank"
-     aria-label="WhatsApp">
+  <a
+    class="float-wa"
+    href="https://wa.me/923234333310"
+    target="_blank"
+    aria-label="WhatsApp">
     W
   </a>
 
-  <a class="float-call"
-     href="tel:+923234333310"
-     aria-label="Call">
+  <a
+    class="float-call"
+    href="tel:+923234333310"
+    aria-label="Call">
     ☎
   </a>
 

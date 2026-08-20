@@ -329,7 +329,219 @@ footer p{
   from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:translateY(0)}
 }
+/* ===== GRAND MARQUEE DEFENCE - LUXURY RED/BLACK THEME ===== */
 
+body{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(90,90,90,.20), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(100,100,100,.16), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(120,0,0,.13), transparent 32%),
+    linear-gradient(135deg,#050505 0%,#151515 45%,#080808 100%);
+  color:#fff;
+  position:relative;
+}
+
+/* Soft blurred floral / smoky background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-15%;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.55;
+  filter:blur(45px);
+  background:
+    radial-gradient(ellipse at 18% 25%,
+      rgba(145,145,145,.20) 0%,
+      transparent 22%),
+    radial-gradient(ellipse at 80% 18%,
+      rgba(95,95,95,.18) 0%,
+      transparent 24%),
+    radial-gradient(ellipse at 72% 70%,
+      rgba(110,0,0,.16) 0%,
+      transparent 25%),
+    radial-gradient(ellipse at 25% 82%,
+      rgba(80,80,80,.16) 0%,
+      transparent 23%);
+}
+
+/* Red + black luxury navigation */
+nav{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.92),
+      rgba(25,0,0,.42),
+      transparent
+    );
+  border-bottom:1px solid rgba(180,20,20,.18);
+}
+
+/* Hero video gets the new luxury mood */
+.hero{
+  background:#050505;
+}
+
+.hero-overlay{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,.72),
+      rgba(35,0,0,.38),
+      rgba(0,0,0,.78)
+    ) !important;
+}
+
+/* Red/gold luxury glow around hero */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(130,0,0,.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 45%,
+      rgba(190,150,50,.10),
+      transparent 28%
+    );
+}
+
+/* Features */
+.features{
+  background:
+    linear-gradient(135deg,#090909,#171717,#090909);
+  border-top:1px solid rgba(150,20,20,.30);
+  border-bottom:1px solid rgba(212,175,55,.18);
+}
+
+.feature-grid{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(170,20,20,.30),
+      rgba(212,175,55,.25),
+      rgba(170,20,20,.30)
+    );
+}
+
+.feature{
+  background:
+    linear-gradient(145deg,#111,#080808);
+}
+
+/* All main sections */
+.about,
+.gallery{
+  background:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(100,100,100,.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      rgba(100,0,0,.12),
+      transparent 30%
+    ),
+    linear-gradient(135deg,#070707,#151515,#080808);
+}
+
+.services,
+.contact{
+  background:
+    radial-gradient(
+      ellipse at 80% 15%,
+      rgba(120,0,0,.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 20% 85%,
+      rgba(110,110,110,.10),
+      transparent 28%
+    ),
+    linear-gradient(135deg,#0b0b0b,#181818,#090909);
+}
+
+/* Gold headings with subtle red glow */
+.hero h1,
+.section-title,
+.about-content h2{
+  color:#e6c36f;
+  text-shadow:
+    0 0 18px rgba(212,175,55,.12),
+    0 4px 25px rgba(0,0,0,.9);
+}
+
+/* Red/gold cards */
+.service,
+.contact-card{
+  background:
+    linear-gradient(145deg,#151515,#090909);
+  border:1px solid rgba(170,35,35,.38);
+  box-shadow:
+    inset 0 0 30px rgba(120,0,0,.05),
+    0 10px 35px rgba(0,0,0,.25);
+}
+
+.service:hover,
+.contact-card:hover{
+  border-color:rgba(212,175,55,.55);
+  box-shadow:
+    0 0 25px rgba(120,0,0,.18),
+    inset 0 0 25px rgba(212,175,55,.04);
+}
+
+/* Gallery luxury borders */
+.gallery-item{
+  background:#090909;
+  border:1px solid rgba(150,25,25,.28);
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+/* Gold buttons with red luxury shadow */
+.btn-gold{
+  background:linear-gradient(135deg,#e6c36f,#c79b32);
+  box-shadow:0 0 20px rgba(212,175,55,.12);
+}
+
+.btn-outline{
+  background:rgba(20,0,0,.38);
+  border-color:#a92929;
+  color:#e6c36f;
+}
+
+.btn-outline:hover{
+  background:rgba(120,0,0,.28);
+  border-color:#e6c36f;
+}
+
+/* Footer */
+footer{
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(90,0,0,.12),
+      transparent 55%
+    ),
+    #040404;
+  border-top:1px solid rgba(180,30,30,.35);
+}
+
+/* Floating buttons */
+.call{
+  background:linear-gradient(135deg,#e6c36f,#b88a25);
+  box-shadow:0 0 22px rgba(212,175,55,.18);
+}
+
+.whatsapp{
+  box-shadow:0 0 22px rgba(37,211,102,.18);
+}
 @media(max-width:800px){
   nav{
     gap:18px;

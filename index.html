@@ -379,38 +379,10 @@ nav{
 
 /* Hero video gets the new luxury mood */
 .hero{
-  background:#050505;
+  background:url("grand.jpeg") center center / cover no-repeat !important;
 }
 
-.hero-overlay{
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0,0,0,.72),
-      rgba(35,0,0,.38),
-      rgba(0,0,0,.78)
-    ) !important;
-}
 
-/* Red/gold luxury glow around hero */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:1;
-  background:
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(130,0,0,.16),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 80% 45%,
-      rgba(190,150,50,.10),
-      transparent 28%
-    );
-}
 
 /* Features */
 .features{
